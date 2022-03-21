@@ -13,7 +13,6 @@ public class Target : Ennemy
     private Etats state = Etats.IDLE;
 
     private BoxCollider2D collider_attack;
-    private SpriteRenderer sprite;
 
     private float attack_time = 0.5f;
     private float idle_time = 5.0f;
@@ -22,7 +21,6 @@ public class Target : Ennemy
     
     void Awake()
     {
-        sprite = gameObject.GetComponent<SpriteRenderer>();
         collider_attack = gameObject.GetComponentInChildren<BoxCollider2D>();
         collider_attack.enabled = false;
     }

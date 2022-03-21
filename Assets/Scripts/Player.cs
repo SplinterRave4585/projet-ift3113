@@ -112,8 +112,6 @@ public class Player : MonoBehaviour
             Parry();
             
         }
-        
-
     }
 
     private bool IsGrounded()
@@ -121,16 +119,6 @@ public class Player : MonoBehaviour
         float extraHeightText = .1f;
         RaycastHit2D raycastHit = Physics2D.BoxCast(colliderJoueur.bounds.center, colliderJoueur.bounds.size, 0f,
             Vector2.down, extraHeightText, platformLayerMask);
-
-        Color rayColor;
-        if (raycastHit.collider != null)
-        {
-            rayColor = Color.green;
-        }
-        else
-        {
-            rayColor = Color.red;
-        }
 
         return raycastHit.collider != null;
     }
@@ -161,10 +149,9 @@ public class Player : MonoBehaviour
     {
         Debug.Log("player damaged");
         invulnerable = true;
-        rigidbodyJoueur.AddForce(10000 * (transform.position - direction), ForceMode2D.Impulse);
-        StartCoroutine(iFrames(3.0f));
+        rigidbodyJoueur.AddForce(100 * (transform.position - direction), ForceMode2D.Force);
         if (--HP <= 0) Die();
-
+        StartCoroutine(iFrames(3.0f));
     }
 
     void Die()
