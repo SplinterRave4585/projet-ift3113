@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private InputActionMap actionMap;
     
     public GameObject attackPoint;
-    public float attackRange = 0.1f;
+    public float attackRange = 1.0f;
     public float distanceAttack = 0.75f;
     [SerializeField] public LayerMask enemiesLayerMask;
     [SerializeField] public LayerMask attacksLayerMask;

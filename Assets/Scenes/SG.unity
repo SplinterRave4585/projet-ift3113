@@ -1396,7 +1396,7 @@ MonoBehaviour:
     m_Bits: 64
   inputManager: {fileID: -944628639613478452, guid: 934bfd3b0ae3ea54fa01d7c8fce3c186, type: 3}
   attackPoint: {fileID: 1522123869244440405}
-  attackRange: 0.1
+  attackRange: 0.75
   distanceAttack: 0.75
   enemiesLayerMask:
     serializedVersion: 2

@@ -111,7 +111,6 @@ public class BasicEnnemy : Ennemy
     {
         rigidbodyEnemy.velocity = Vector2.zero;
         attack_started = true;
-        vulnerable = false;
         colliderAttack.enabled = true;
         var coroutine = windUpAttack();
         StartCoroutine(coroutine);
@@ -120,6 +119,7 @@ public class BasicEnnemy : Ennemy
 
     override public void Damage()
     {
+        Debug.Log("DAMAGE");
         if (vulnerable)
         {
             if (--HP == 0) Die();
@@ -184,7 +184,7 @@ public class BasicEnnemy : Ennemy
     IEnumerator windUpAttack()
     {
         coroutine_attack_running = true;
-        yield return new WaitForSeconds(.75f);
+        yield return new WaitForSeconds(.5f);
         rigidbodyEnemy.AddForce(new Vector2(direction * 3000,700), ForceMode2D.Force);
         coroutine_attack_running = false;
     }
