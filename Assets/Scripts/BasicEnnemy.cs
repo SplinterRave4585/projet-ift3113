@@ -21,7 +21,7 @@ public class BasicEnnemy : Ennemy
     public GameObject player;
     
     private Rigidbody2D rigidbodyEnemy;
-    private Collider2D colliderEnemy;
+    private CircleCollider2D colliderEnemy;
     
     private BasicEnnemyEtats state;
     private Vector2 startPos;
@@ -30,7 +30,7 @@ public class BasicEnnemy : Ennemy
     public float moveRadius = 2.0f;
 
     private bool vulnerable = true;
-    private Collider2D colliderAttack;
+    private CircleCollider2D colliderAttack;
     private bool attack_started = false;
     
     public float detectionRadius = 6.0f;
@@ -41,13 +41,13 @@ public class BasicEnnemy : Ennemy
     private bool is_stunned = false;
     
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         startPos = transform.position;
         state = BasicEnnemyEtats.IDLE;
         rigidbodyEnemy = GetComponent<Rigidbody2D>();
-        colliderEnemy = GetComponent<Collider2D>();
-        colliderAttack = GetComponentInChildren<Collider2D>();
+        colliderEnemy = GetComponent<CircleCollider2D>();
+        colliderAttack = gameObject.transform.GetChild(0).GetComponent<CircleCollider2D>();
         colliderAttack.enabled = false;
     }
 
@@ -88,7 +88,6 @@ public class BasicEnnemy : Ennemy
                 }
                 else if (!coroutine_attack_running && attack_started)
                 {
-                    rigidbodyEnemy.AddForce(new Vector2(direction * 7000,0), ForceMode2D.Force);
                     vulnerable = true;
                     colliderAttack.enabled = false;
                     attack_started = false;
@@ -185,7 +184,7 @@ public class BasicEnnemy : Ennemy
     {
         coroutine_attack_running = true;
         yield return new WaitForSeconds(.5f);
-        rigidbodyEnemy.AddForce(new Vector2(direction * 3000,700), ForceMode2D.Force);
+        rigidbodyEnemy.velocity = new Vector2(75, 0) * direction;
         coroutine_attack_running = false;
     }
 
