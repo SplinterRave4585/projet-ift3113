@@ -42,8 +42,9 @@ public class Player : MonoBehaviour
     [HideInInspector] public float orientation = 1;
 
     private Vector2 currentMove;
-
+    
     private float vitesseX;
+    private bool landed = false;
 
 
     void Awake()
@@ -78,11 +79,19 @@ public class Player : MonoBehaviour
         
         if (IsGrounded())
         {
+            if (!landed)
+            {
+                rigidbodyJoueur.velocity = new Vector2(vitesseX, 0);
+                landed = true;
+            }
             rigidbodyJoueur.AddForce(currentMove * walkSpeed, ForceMode2D.Force);
         }
         else if (!IsGrounded())
         {
             rigidbodyJoueur.AddForce(currentMove * glideSpeed, ForceMode2D.Force);
+            landed = false;
+            vitesseX = rigidbodyJoueur.velocity.x;
+
         }
 
         if (rigidbodyJoueur.velocity.y < -0.01f && !IsGrounded()) rigidbodyJoueur.gravityScale = 4;
@@ -142,14 +151,12 @@ public class Player : MonoBehaviour
             att.gameObject.GetComponentInParent<Ennemy>().Parried();
         }
     }
-    
-    
 
     void Damage(Vector3 direction)
     {
         Debug.Log("player damaged");
         invulnerable = true;
-        rigidbodyJoueur.AddForce(100 * (transform.position - direction), ForceMode2D.Force);
+        rigidbodyJoueur.AddForce(50 * (transform.position - direction), ForceMode2D.Force);
         if (--HP <= 0) Die();
         StartCoroutine(iFrames(3.0f));
     }

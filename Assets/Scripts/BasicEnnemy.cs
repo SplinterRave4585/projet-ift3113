@@ -18,8 +18,10 @@ public class BasicEnnemy : Ennemy
 
     [SerializeField] private LayerMask platformLayerMask;
     
-    public GameObject player;
-    
+    private GameObject player;
+
+    private Animator animator;
+     
     private Rigidbody2D rigidbodyEnemy;
     private CircleCollider2D colliderEnemy;
     
@@ -43,6 +45,9 @@ public class BasicEnnemy : Ennemy
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        animator = GetComponent<Animator>();
+        
         startPos = transform.position;
         state = BasicEnnemyEtats.IDLE;
         rigidbodyEnemy = GetComponent<Rigidbody2D>();
@@ -86,11 +91,12 @@ public class BasicEnnemy : Ennemy
                     Debug.Log("COROUTINE RUNNING");
                     rigidbodyEnemy.velocity = Vector2.zero;
                 }
-                else if (!coroutine_attack_running && attack_started)
+                else if (!coroutine_attack_running && attack_started && animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "attack")
                 {
                     vulnerable = true;
                     colliderAttack.enabled = false;
                     attack_started = false;
+                    animator.SetBool("isAttacking", false);
                     StartCoroutine(cooldownAttack());
                     state = BasicEnnemyEtats.CHASING;
                 } 
@@ -184,7 +190,8 @@ public class BasicEnnemy : Ennemy
     {
         coroutine_attack_running = true;
         yield return new WaitForSeconds(.5f);
-        rigidbodyEnemy.velocity = new Vector2(75, 0) * direction;
+        rigidbodyEnemy.velocity = new Vector2(20, 0) * direction;
+        animator.SetBool("isAttacking", true);
         coroutine_attack_running = false;
     }
 
