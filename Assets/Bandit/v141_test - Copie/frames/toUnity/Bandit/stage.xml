@@ -1,0 +1,162 @@
+<stages>
+ <stage name="v141_test - Copie_01_idle">
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_boucle" drwId="2"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeHaut" drwId="3"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDevant" drwId="4"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_D" drwId="5"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_G" drwId="6"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche_int" drwId="7"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche" drwId="8"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_D_1" drwId="9"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_D_1" drwId="10"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_D_1" drwId="11"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_D_2" drwId="12"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_torse_1" drwId="13"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_D" drwId="14"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBas_D_1" drwId="15"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_D_1" drwId="16"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bassin_1" drwId="17"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_G" drwId="18"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBAs_G_1" drwId="19"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_G_1" drwId="20"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_G_1" drwId="21"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_G_1" drwId="22"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_G_1" drwId="23"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_G_1" drwId="24"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDos" drwId="25"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_Grimm_Dos" drwId="26"/>
+  <play drawingAnimation="01_idle_Top" name="Top" skeleton="Top" animation="01_idle_Top"/>
+ </stage>
+ <props name="v141_test - Copie_01_idle_Props">
+  <prop drawingAnimation="01_idle_Bandit_puppet_v01_1_Grimm_Corps" name="Bandit_puppet_v01_1_Grimm_Corps" skeleton="Bandit_puppet_v01_1_Grimm_Corps" animation="01_idle_Bandit_puppet_v01_1_Grimm_Corps"/>
+  <prop drawingAnimation="01_idle_Bandit_puppet_v01_1_Grimm_Dos" name="Bandit_puppet_v01_1_Grimm_Dos" skeleton="Bandit_puppet_v01_1_Grimm_Dos" animation="01_idle_Bandit_puppet_v01_1_Grimm_Dos"/>
+ </props>
+ <stage name="v141_test - Copie_02_runcycle">
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_boucle" drwId="2"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeHaut" drwId="3"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDevant" drwId="4"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_D" drwId="5"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_G" drwId="6"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche_int" drwId="7"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche" drwId="8"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_D_1" drwId="9"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_D_1" drwId="10"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_D_1" drwId="11"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_D_2" drwId="12"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_torse_1" drwId="13"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_D" drwId="14"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBas_D_1" drwId="15"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_D_1" drwId="16"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bassin_1" drwId="17"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_G" drwId="18"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBAs_G_1" drwId="19"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_G_1" drwId="20"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_G_1" drwId="21"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_G_1" drwId="22"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_G_1" drwId="23"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_G_1" drwId="24"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDos" drwId="25"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_Grimm_Dos" drwId="26"/>
+  <play drawingAnimation="02_runcycle_Top" name="Top" skeleton="Top_1" animation="02_runcycle_Top"/>
+ </stage>
+ <props name="v141_test - Copie_02_runcycle_Props">
+  <prop drawingAnimation="02_runcycle_Bandit_puppet_v01_1_Grimm_Corps" name="Bandit_puppet_v01_1_Grimm_Corps" skeleton="Bandit_puppet_v01_1_Grimm_Corps_1" animation="02_runcycle_Bandit_puppet_v01_1_Grimm_Corps"/>
+  <prop drawingAnimation="02_runcycle_Bandit_puppet_v01_1_Grimm_Dos" name="Bandit_puppet_v01_1_Grimm_Dos" skeleton="Bandit_puppet_v01_1_Grimm_Dos_1" animation="02_runcycle_Bandit_puppet_v01_1_Grimm_Dos"/>
+ </props>
+ <stage name="v141_test - Copie_03_jump">
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_boucle" drwId="2"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeHaut" drwId="3"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDevant" drwId="4"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_D" drwId="5"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_G" drwId="6"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche_int" drwId="7"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche" drwId="8"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_D_1" drwId="9"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_D_1" drwId="10"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_D_1" drwId="11"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_D_2" drwId="12"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_torse_1" drwId="13"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_D" drwId="14"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBas_D_1" drwId="15"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_D_1" drwId="16"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bassin_1" drwId="17"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_G" drwId="18"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBAs_G_1" drwId="19"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_G_1" drwId="20"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_G_1" drwId="21"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_G_1" drwId="22"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_G_1" drwId="23"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_G_1" drwId="24"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDos" drwId="25"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_Grimm_Dos" drwId="26"/>
+  <play drawingAnimation="03_jump_Top" name="Top" skeleton="Top_2" animation="03_jump_Top"/>
+ </stage>
+ <props name="v141_test - Copie_03_jump_Props">
+  <prop drawingAnimation="03_jump_Bandit_puppet_v01_1_Grimm_Corps" name="Bandit_puppet_v01_1_Grimm_Corps" skeleton="Bandit_puppet_v01_1_Grimm_Corps_2" animation="03_jump_Bandit_puppet_v01_1_Grimm_Corps"/>
+  <prop drawingAnimation="03_jump_Bandit_puppet_v01_1_Grimm_Dos" name="Bandit_puppet_v01_1_Grimm_Dos" skeleton="Bandit_puppet_v01_1_Grimm_Dos_2" animation="03_jump_Bandit_puppet_v01_1_Grimm_Dos"/>
+ </props>
+ <stage name="v141_test - Copie_04_fall">
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_boucle" drwId="2"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeHaut" drwId="3"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDevant" drwId="4"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_D" drwId="5"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_G" drwId="6"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche_int" drwId="7"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche" drwId="8"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_D_1" drwId="9"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_D_1" drwId="10"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_D_1" drwId="11"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_D_2" drwId="12"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_torse_1" drwId="13"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_D" drwId="14"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBas_D_1" drwId="15"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_D_1" drwId="16"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bassin_1" drwId="17"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_G" drwId="18"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBAs_G_1" drwId="19"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_G_1" drwId="20"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_G_1" drwId="21"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_G_1" drwId="22"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_G_1" drwId="23"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_G_1" drwId="24"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDos" drwId="25"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_Grimm_Dos" drwId="26"/>
+  <play drawingAnimation="04_fall_Top" name="Top" skeleton="Top_3" animation="04_fall_Top"/>
+ </stage>
+ <props name="v141_test - Copie_04_fall_Props">
+  <prop drawingAnimation="04_fall_Bandit_puppet_v01_1_Grimm_Corps" name="Bandit_puppet_v01_1_Grimm_Corps" skeleton="Bandit_puppet_v01_1_Grimm_Corps_3" animation="04_fall_Bandit_puppet_v01_1_Grimm_Corps"/>
+  <prop drawingAnimation="04_fall_Bandit_puppet_v01_1_Grimm_Dos" name="Bandit_puppet_v01_1_Grimm_Dos" skeleton="Bandit_puppet_v01_1_Grimm_Dos_3" animation="04_fall_Bandit_puppet_v01_1_Grimm_Dos"/>
+ </props>
+ <stage name="v141_test - Copie_05_defense">
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_Grimm_Corps" drwId="1"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_boucle" drwId="2"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeHaut" drwId="3"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDevant" drwId="4"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_D" drwId="5"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_oeil_G" drwId="6"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche_int" drwId="7"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capuche" drwId="8"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_D_1" drwId="9"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_D_1" drwId="10"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_D_1" drwId="11"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_D_2" drwId="12"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_torse_1" drwId="13"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_D" drwId="14"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBas_D_1" drwId="15"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_D_1" drwId="16"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bassin_1" drwId="17"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_pied_G" drwId="18"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeBAs_G_1" drwId="19"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_jambeHaut_G_1" drwId="20"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_epaule_G_1" drwId="21"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_main_G_1" drwId="22"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Haut_G_1" drwId="23"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_bras_Bas_G_1" drwId="24"/>
+  <node groupId="0" skinId="0" name="Bandit_puppet_v01_1_capeDos" drwId="25"/>
+  <play drawingAnimation="05_defense_Top" name="Top" skeleton="Top_4" animation="05_defense_Top"/>
+ </stage>
+ <props name="v141_test - Copie_05_defense_Props">
+  <prop drawingAnimation="05_defense_Bandit_puppet_v01_1_Grimm_Corps" name="Bandit_puppet_v01_1_Grimm_Corps" skeleton="Bandit_puppet_v01_1_Grimm_Corps_4" animation="05_defense_Bandit_puppet_v01_1_Grimm_Corps"/>
+  <prop drawingAnimation="05_defense_Bandit_puppet_v01_1_Grimm_Dos" name="Bandit_puppet_v01_1_Grimm_Dos" skeleton="Bandit_puppet_v01_1_Grimm_Dos_4" animation="05_defense_Bandit_puppet_v01_1_Grimm_Dos"/>
+ </props>
+</stages>

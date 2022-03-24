@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     private float vitesseX;
     private bool landed = false;
 
+    public Animator animator;
+    
 
     void Awake()
     {
@@ -63,15 +65,21 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float extraHeightText = .1f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(colliderJoueur.bounds.center, colliderJoueur.bounds.size, 0f, 
-            new Vector2(orientation,0), extraHeightText, platformLayerMask);
+
+        if (IsGrounded()) animator.SetBool("isGrounded", true);
+        else if (!IsGrounded()) animator.SetBool("isGrounded", false);
 
         vitesseX = rigidbodyJoueur.velocity.x;
+        
+        animator.SetFloat("vitesseX",vitesseX);
+        
+        animator.SetFloat("vitesseY", rigidbodyJoueur.velocity.y);
 
         if (distanceAttack * orientation != attackPoint.transform.localPosition.x)
             attackPoint.transform.localPosition = new Vector3(distanceAttack * orientation, 0, 0);
 
+        
+        
     }
 
     void FixedUpdate()
@@ -219,5 +227,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(s);
         invulnerable = false;
     }
+    
+
 
 }

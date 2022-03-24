@@ -1,0 +1,419 @@
+<drawingAnimations>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="01_idle_Top">
+  <drawing node="Bandit_puppet_v01_1_boucle" name="4-boucle" drwId="2">
+   <drw skinId="0" frame="1" repeat="40" name="4-boucle-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeHaut" name="5-capeHaut" drwId="3">
+   <drw skinId="0" frame="1" repeat="40" name="5-capeHaut-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDevant" name="6-capeDevant" drwId="4">
+   <drw skinId="0" frame="1" repeat="40" name="6-capeDevant-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_D" name="8-oeil_D_1" drwId="5">
+   <drw skinId="0" frame="1" repeat="40" name="8-oeil_D_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_G" name="9-oeil_G_1" drwId="6">
+   <drw skinId="0" frame="1" repeat="40" name="9-oeil_G_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche_int" name="10-capuche_int" drwId="7">
+   <drw skinId="0" frame="1" repeat="40" name="10-capuche_int-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche" name="11-capuche" drwId="8">
+   <drw skinId="0" frame="1" repeat="40" name="11-capuche-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_D_1" name="13-epaule_D" drwId="9">
+   <drw skinId="0" frame="1" repeat="40" name="13-epaule_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_D_1" name="14-bras_Haut_D" drwId="10">
+   <drw skinId="0" frame="1" repeat="40" name="14-bras_Haut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_D_1" name="15-main_D" drwId="11">
+   <drw skinId="0" frame="1" repeat="40" name="15-main_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_D_2" name="16-bras_Bas_D" drwId="12">
+   <drw skinId="0" frame="1" repeat="40" name="16-bras_Bas_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_torse_1" name="17-torse" drwId="13">
+   <drw skinId="0" frame="1" repeat="40" name="17-torse-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_D" name="22-pied_D" drwId="14">
+   <drw skinId="0" frame="1" repeat="40" name="22-pied_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBas_D_1" name="23-jambeBAs_D" drwId="15">
+   <drw skinId="0" frame="1" repeat="40" name="23-jambeBAs_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_D_1" name="24-jambeHaut_D" drwId="16">
+   <drw skinId="0" frame="1" repeat="40" name="24-jambeHaut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bassin_1" name="25-bassin" drwId="17">
+   <drw skinId="0" frame="1" repeat="40" name="25-bassin-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_G" name="26-pied_G" drwId="18">
+   <drw skinId="0" frame="1" repeat="40" name="26-pied_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBAs_G_1" name="27-jambeBAs_G" drwId="19">
+   <drw skinId="0" frame="1" repeat="40" name="27-jambeBAs_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_G_1" name="28-jambeHaut_G" drwId="20">
+   <drw skinId="0" frame="1" repeat="40" name="28-jambeHaut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_G_1" name="18-epaule_G" drwId="21">
+   <drw skinId="0" frame="1" repeat="40" name="18-epaule_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_G_1" name="19-main_G" drwId="22">
+   <drw skinId="0" frame="1" repeat="40" name="19-main_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_G_1" name="21-bras_Haut_G" drwId="23">
+   <drw skinId="0" frame="1" repeat="40" name="21-bras_Haut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_G_1" name="20-bras_Bas_G" drwId="24">
+   <drw skinId="0" frame="1" repeat="40" name="20-bras_Bas_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDos" name="7-capeDos" drwId="25">
+   <drw skinId="0" frame="1" repeat="40" name="7-capeDos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="01_idle_Bandit_puppet_v01_1_Grimm_Corps">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Corps" name="3-Grimm_Corps" drwId="1"/>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="01_idle_Bandit_puppet_v01_1_Grimm_Dos">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Dos" name="12-Grimm_Dos" drwId="26">
+   <drw skinId="0" frame="1" repeat="40" name="12-Grimm_Dos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="02_runcycle_Top">
+  <drawing node="Bandit_puppet_v01_1_boucle" name="4-boucle" drwId="2">
+   <drw skinId="0" frame="1" repeat="24" name="4-boucle-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeHaut" name="5-capeHaut" drwId="3">
+   <drw skinId="0" frame="1" repeat="24" name="5-capeHaut-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDevant" name="6-capeDevant" drwId="4">
+   <drw skinId="0" frame="1" repeat="24" name="6-capeDevant-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_D" name="8-oeil_D_1" drwId="5">
+   <drw skinId="0" frame="1" repeat="24" name="8-oeil_D_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_G" name="9-oeil_G_1" drwId="6">
+   <drw skinId="0" frame="1" repeat="24" name="9-oeil_G_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche_int" name="10-capuche_int" drwId="7">
+   <drw skinId="0" frame="1" repeat="24" name="10-capuche_int-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche" name="11-capuche" drwId="8">
+   <drw skinId="0" frame="1" repeat="24" name="11-capuche-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_D_1" name="13-epaule_D" drwId="9">
+   <drw skinId="0" frame="1" repeat="24" name="13-epaule_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_D_1" name="14-bras_Haut_D" drwId="10">
+   <drw skinId="0" frame="1" repeat="24" name="14-bras_Haut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_D_1" name="15-main_D" drwId="11">
+   <drw skinId="0" frame="1" repeat="24" name="15-main_D-2.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_D_2" name="16-bras_Bas_D" drwId="12">
+   <drw skinId="0" frame="1" repeat="24" name="16-bras_Bas_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_torse_1" name="17-torse" drwId="13">
+   <drw skinId="0" frame="1" repeat="24" name="17-torse-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_D" name="22-pied_D" drwId="14">
+   <drw skinId="0" frame="1" repeat="24" name="22-pied_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBas_D_1" name="23-jambeBAs_D" drwId="15">
+   <drw skinId="0" frame="1" repeat="24" name="23-jambeBAs_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_D_1" name="24-jambeHaut_D" drwId="16">
+   <drw skinId="0" frame="1" repeat="24" name="24-jambeHaut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bassin_1" name="25-bassin" drwId="17">
+   <drw skinId="0" frame="1" repeat="24" name="25-bassin-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_G" name="26-pied_G" drwId="18">
+   <drw skinId="0" frame="1" repeat="24" name="26-pied_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBAs_G_1" name="27-jambeBAs_G" drwId="19">
+   <drw skinId="0" frame="1" repeat="24" name="27-jambeBAs_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_G_1" name="28-jambeHaut_G" drwId="20">
+   <drw skinId="0" frame="1" repeat="24" name="28-jambeHaut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_G_1" name="18-epaule_G" drwId="21">
+   <drw skinId="0" frame="1" repeat="24" name="18-epaule_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_G_1" name="19-main_G" drwId="22">
+   <drw skinId="0" frame="1" repeat="24" name="19-main_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_G_1" name="21-bras_Haut_G" drwId="23">
+   <drw skinId="0" frame="1" repeat="24" name="21-bras_Haut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_G_1" name="20-bras_Bas_G" drwId="24">
+   <drw skinId="0" frame="1" repeat="24" name="20-bras_Bas_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDos" name="7-capeDos" drwId="25">
+   <drw skinId="0" frame="1" repeat="24" name="7-capeDos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="02_runcycle_Bandit_puppet_v01_1_Grimm_Corps">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Corps" name="3-Grimm_Corps" drwId="1"/>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="02_runcycle_Bandit_puppet_v01_1_Grimm_Dos">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Dos" name="12-Grimm_Dos" drwId="26">
+   <drw skinId="0" frame="1" repeat="24" name="12-Grimm_Dos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="03_jump_Top">
+  <drawing node="Bandit_puppet_v01_1_boucle" name="4-boucle" drwId="2">
+   <drw skinId="0" frame="1" repeat="8" name="4-boucle-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeHaut" name="5-capeHaut" drwId="3">
+   <drw skinId="0" frame="1" repeat="8" name="5-capeHaut-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDevant" name="6-capeDevant" drwId="4">
+   <drw skinId="0" frame="1" repeat="8" name="6-capeDevant-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_D" name="8-oeil_D_1" drwId="5">
+   <drw skinId="0" frame="1" repeat="8" name="8-oeil_D_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_G" name="9-oeil_G_1" drwId="6">
+   <drw skinId="0" frame="1" repeat="8" name="9-oeil_G_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche_int" name="10-capuche_int" drwId="7">
+   <drw skinId="0" frame="1" repeat="8" name="10-capuche_int-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche" name="11-capuche" drwId="8">
+   <drw skinId="0" frame="1" repeat="8" name="11-capuche-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_D_1" name="13-epaule_D" drwId="9">
+   <drw skinId="0" frame="1" repeat="8" name="13-epaule_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_D_1" name="14-bras_Haut_D" drwId="10">
+   <drw skinId="0" frame="1" repeat="8" name="14-bras_Haut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_D_1" name="15-main_D" drwId="11">
+   <drw skinId="0" frame="1" repeat="1" name="15-main_D-1.png"/>
+   <drw skinId="0" frame="2" repeat="5" name="15-main_D-2.png"/>
+   <drw skinId="0" frame="7" repeat="2" name="15-main_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_D_2" name="16-bras_Bas_D" drwId="12">
+   <drw skinId="0" frame="1" repeat="8" name="16-bras_Bas_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_torse_1" name="17-torse" drwId="13">
+   <drw skinId="0" frame="1" repeat="8" name="17-torse-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_D" name="22-pied_D" drwId="14">
+   <drw skinId="0" frame="1" repeat="8" name="22-pied_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBas_D_1" name="23-jambeBAs_D" drwId="15">
+   <drw skinId="0" frame="1" repeat="8" name="23-jambeBAs_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_D_1" name="24-jambeHaut_D" drwId="16">
+   <drw skinId="0" frame="1" repeat="8" name="24-jambeHaut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bassin_1" name="25-bassin" drwId="17">
+   <drw skinId="0" frame="1" repeat="8" name="25-bassin-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_G" name="26-pied_G" drwId="18">
+   <drw skinId="0" frame="1" repeat="8" name="26-pied_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBAs_G_1" name="27-jambeBAs_G" drwId="19">
+   <drw skinId="0" frame="1" repeat="8" name="27-jambeBAs_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_G_1" name="28-jambeHaut_G" drwId="20">
+   <drw skinId="0" frame="1" repeat="8" name="28-jambeHaut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_G_1" name="18-epaule_G" drwId="21">
+   <drw skinId="0" frame="1" repeat="8" name="18-epaule_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_G_1" name="19-main_G" drwId="22">
+   <drw skinId="0" frame="1" repeat="8" name="19-main_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_G_1" name="21-bras_Haut_G" drwId="23">
+   <drw skinId="0" frame="1" repeat="8" name="21-bras_Haut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_G_1" name="20-bras_Bas_G" drwId="24">
+   <drw skinId="0" frame="1" repeat="8" name="20-bras_Bas_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDos" name="7-capeDos" drwId="25">
+   <drw skinId="0" frame="1" repeat="8" name="7-capeDos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="03_jump_Bandit_puppet_v01_1_Grimm_Corps">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Corps" name="3-Grimm_Corps" drwId="1"/>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="03_jump_Bandit_puppet_v01_1_Grimm_Dos">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Dos" name="12-Grimm_Dos" drwId="26">
+   <drw skinId="0" frame="1" repeat="8" name="12-Grimm_Dos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="04_fall_Top">
+  <drawing node="Bandit_puppet_v01_1_boucle" name="4-boucle" drwId="2">
+   <drw skinId="0" frame="1" repeat="11" name="4-boucle-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeHaut" name="5-capeHaut" drwId="3">
+   <drw skinId="0" frame="1" repeat="11" name="5-capeHaut-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDevant" name="6-capeDevant" drwId="4">
+   <drw skinId="0" frame="1" repeat="11" name="6-capeDevant-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_D" name="8-oeil_D_1" drwId="5">
+   <drw skinId="0" frame="1" repeat="11" name="8-oeil_D_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_G" name="9-oeil_G_1" drwId="6">
+   <drw skinId="0" frame="1" repeat="11" name="9-oeil_G_1-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche_int" name="10-capuche_int" drwId="7">
+   <drw skinId="0" frame="1" repeat="11" name="10-capuche_int-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche" name="11-capuche" drwId="8">
+   <drw skinId="0" frame="1" repeat="11" name="11-capuche-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_D_1" name="13-epaule_D" drwId="9">
+   <drw skinId="0" frame="1" repeat="11" name="13-epaule_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_D_1" name="14-bras_Haut_D" drwId="10">
+   <drw skinId="0" frame="1" repeat="11" name="14-bras_Haut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_D_1" name="15-main_D" drwId="11">
+   <drw skinId="0" frame="1" repeat="6" name="15-main_D-1.png"/>
+   <drw skinId="0" frame="7" repeat="2" name="15-main_D-2.png"/>
+   <drw skinId="0" frame="9" repeat="3" name="15-main_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_D_2" name="16-bras_Bas_D" drwId="12">
+   <drw skinId="0" frame="1" repeat="11" name="16-bras_Bas_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_torse_1" name="17-torse" drwId="13">
+   <drw skinId="0" frame="1" repeat="11" name="17-torse-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_D" name="22-pied_D" drwId="14">
+   <drw skinId="0" frame="1" repeat="11" name="22-pied_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBas_D_1" name="23-jambeBAs_D" drwId="15">
+   <drw skinId="0" frame="1" repeat="11" name="23-jambeBAs_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_D_1" name="24-jambeHaut_D" drwId="16">
+   <drw skinId="0" frame="1" repeat="11" name="24-jambeHaut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bassin_1" name="25-bassin" drwId="17">
+   <drw skinId="0" frame="1" repeat="11" name="25-bassin-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_G" name="26-pied_G" drwId="18">
+   <drw skinId="0" frame="1" repeat="11" name="26-pied_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBAs_G_1" name="27-jambeBAs_G" drwId="19">
+   <drw skinId="0" frame="1" repeat="11" name="27-jambeBAs_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_G_1" name="28-jambeHaut_G" drwId="20">
+   <drw skinId="0" frame="1" repeat="11" name="28-jambeHaut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_G_1" name="18-epaule_G" drwId="21">
+   <drw skinId="0" frame="1" repeat="11" name="18-epaule_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_G_1" name="19-main_G" drwId="22">
+   <drw skinId="0" frame="1" repeat="11" name="19-main_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_G_1" name="21-bras_Haut_G" drwId="23">
+   <drw skinId="0" frame="1" repeat="11" name="21-bras_Haut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_G_1" name="20-bras_Bas_G" drwId="24">
+   <drw skinId="0" frame="1" repeat="11" name="20-bras_Bas_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDos" name="7-capeDos" drwId="25">
+   <drw skinId="0" frame="1" repeat="11" name="7-capeDos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="04_fall_Bandit_puppet_v01_1_Grimm_Corps">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Corps" name="3-Grimm_Corps" drwId="1"/>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="04_fall_Bandit_puppet_v01_1_Grimm_Dos">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Dos" name="12-Grimm_Dos" drwId="26">
+   <drw skinId="0" frame="1" repeat="11" name="12-Grimm_Dos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="05_defense_Top">
+  <drawing node="Bandit_puppet_v01_1_boucle" name="4-boucle" drwId="2">
+   <drw skinId="0" frame="1" repeat="6" name="4-boucle-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeHaut" name="5-capeHaut" drwId="3">
+   <drw skinId="0" frame="1" repeat="6" name="5-capeHaut-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDevant" name="6-capeDevant" drwId="4">
+   <drw skinId="0" frame="1" repeat="6" name="6-capeDevant-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_D" name="8-oeil_D_1" drwId="5">
+   <drw skinId="0" frame="1" repeat="1" name="8-oeil_D_1-1.png"/>
+   <drw skinId="0" frame="2" repeat="5" name="8-oeil_D_1-2.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_oeil_G" name="9-oeil_G_1" drwId="6">
+   <drw skinId="0" frame="1" repeat="1" name="9-oeil_G_1-1.png"/>
+   <drw skinId="0" frame="2" repeat="5" name="9-oeil_G_1-2.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche_int" name="10-capuche_int" drwId="7">
+   <drw skinId="0" frame="1" repeat="6" name="10-capuche_int-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capuche" name="11-capuche" drwId="8">
+   <drw skinId="0" frame="1" repeat="6" name="11-capuche-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_D_1" name="13-epaule_D" drwId="9">
+   <drw skinId="0" frame="1" repeat="6" name="13-epaule_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_D_1" name="14-bras_Haut_D" drwId="10">
+   <drw skinId="0" frame="1" repeat="6" name="14-bras_Haut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_D_1" name="15-main_D" drwId="11">
+   <drw skinId="0" frame="1" repeat="1" name="15-main_D-1.png"/>
+   <drw skinId="0" frame="2" repeat="5" name="15-main_D-2.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_D_2" name="16-bras_Bas_D" drwId="12">
+   <drw skinId="0" frame="1" repeat="6" name="16-bras_Bas_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_torse_1" name="17-torse" drwId="13">
+   <drw skinId="0" frame="1" repeat="6" name="17-torse-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_D" name="22-pied_D" drwId="14">
+   <drw skinId="0" frame="1" repeat="6" name="22-pied_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBas_D_1" name="23-jambeBAs_D" drwId="15">
+   <drw skinId="0" frame="1" repeat="6" name="23-jambeBAs_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_D_1" name="24-jambeHaut_D" drwId="16">
+   <drw skinId="0" frame="1" repeat="6" name="24-jambeHaut_D-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bassin_1" name="25-bassin" drwId="17">
+   <drw skinId="0" frame="1" repeat="6" name="25-bassin-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_pied_G" name="26-pied_G" drwId="18">
+   <drw skinId="0" frame="1" repeat="6" name="26-pied_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeBAs_G_1" name="27-jambeBAs_G" drwId="19">
+   <drw skinId="0" frame="1" repeat="6" name="27-jambeBAs_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_jambeHaut_G_1" name="28-jambeHaut_G" drwId="20">
+   <drw skinId="0" frame="1" repeat="6" name="28-jambeHaut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_epaule_G_1" name="18-epaule_G" drwId="21">
+   <drw skinId="0" frame="1" repeat="6" name="18-epaule_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_main_G_1" name="19-main_G" drwId="22">
+   <drw skinId="0" frame="1" repeat="6" name="19-main_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Haut_G_1" name="21-bras_Haut_G" drwId="23">
+   <drw skinId="0" frame="1" repeat="6" name="21-bras_Haut_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_bras_Bas_G_1" name="20-bras_Bas_G" drwId="24">
+   <drw skinId="0" frame="1" repeat="6" name="20-bras_Bas_G-1.png"/>
+  </drawing>
+  <drawing node="Bandit_puppet_v01_1_capeDos" name="7-capeDos" drwId="25">
+   <drw skinId="0" frame="1" repeat="6" name="7-capeDos-1.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="05_defense_Bandit_puppet_v01_1_Grimm_Corps">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Corps" name="3-Grimm_Corps" drwId="1">
+   <drw skinId="0" frame="1" repeat="6" name="3-Grimm_Corps-3.png"/>
+  </drawing>
+ </drawingAnimation>
+ <drawingAnimation spritesheet="sheet_Top-NewSceneopi" name="05_defense_Bandit_puppet_v01_1_Grimm_Dos">
+  <drawing node="Bandit_puppet_v01_1_Grimm_Dos" name="12-Grimm_Dos" drwId="26"/>
+ </drawingAnimation>
+</drawingAnimations>
