@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     private bool landed = false;
 
     public Animator animator;
+    public GameObject healthBar;
     
 
     void Awake()
@@ -66,14 +67,14 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        if (IsGrounded()) animator.SetBool("isGrounded", true);
-        else if (!IsGrounded()) animator.SetBool("isGrounded", false);
+        //if (IsGrounded()) animator.SetBool("isGrounded", true);
+        //else if (!IsGrounded()) animator.SetBool("isGrounded", false);
 
         vitesseX = rigidbodyJoueur.velocity.x;
-        
-        animator.SetFloat("vitesseX",vitesseX);
-        
-        animator.SetFloat("vitesseY", rigidbodyJoueur.velocity.y);
+
+        //animator.SetFloat("vitesseX",vitesseX);
+
+        //animator.SetFloat("vitesseY", rigidbodyJoueur.velocity.y);
 
         if (distanceAttack * orientation != attackPoint.transform.localPosition.x)
             attackPoint.transform.localPosition = new Vector3(distanceAttack * orientation, 0, 0);
