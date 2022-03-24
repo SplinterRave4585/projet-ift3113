@@ -143,11 +143,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!95 &80845877 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2310636238490993893, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-  m_PrefabInstance: {fileID: 2104999506}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &96399728
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +634,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.3888889, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -9827,7 +9822,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 2.199248, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10243,65 +10238,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1063798259300204265, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 80845877}
-    - target: {fileID: 1063798259407658924, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658924, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_LightOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658924, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_ShadowIntensity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658924, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.751
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658924, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_LightVolumeOpacity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658924, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_PointLightInnerAngle
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658924, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 4.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658925, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259407658926, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Name
-      value: Player Light 2D
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749434230817258, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035560, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 0cb631019ef926b48b421fd57e59353c, type: 2}
     - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2820176
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1003484
       objectReference: {fileID: 0}
     - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10344,6 +10283,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2007749435551035563, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007749435551035563, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007749435551035563, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -10351,16 +10298,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: JoueurNoAnim
       objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035566, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 3979574787991495358, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2007749435551035565, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
+    - target: {fileID: 5314446774338599609, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
+      propertyPath: CurrentFrame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314446774338599609, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
+      propertyPath: CurrentClipIndex
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
 --- !u!1 &3272221841736583193
 GameObject:

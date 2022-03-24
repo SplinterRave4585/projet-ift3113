@@ -1325,7 +1325,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1524821078}
+  - {fileID: 1391912958}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1558,7 +1558,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8506494, y: 1}
+    m_SensorSize: {x: 2.0068307, y: 1}
   m_Transitions:
     m_BlendHint: 3
     m_InheritPosition: 0
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1969592437}
   m_ConfineScreenEdges: 1
   m_Damping: 0
---- !u!21 &1524821078
+--- !u!21 &1391912958
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
