@@ -99,8 +99,9 @@ public class Player : MonoBehaviour
             parry = false;
         }
         
-        if (distanceAttack * orientation != attackPoint.transform.localPosition.x)
-            attackPoint.transform.localPosition = new Vector3(distanceAttack * orientation, 0, 0);
+        // uncomment if inversion scale removed
+        //if (distanceAttack * orientation != attackPoint.transform.localPosition.x)
+        //   attackPoint.transform.localPosition = new Vector3(distanceAttack * orientation, 0, 0);
         
     }
     
@@ -248,7 +249,6 @@ public class Player : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Player");
         
     }
-    
 
 
 }

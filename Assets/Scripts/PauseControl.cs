@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PauseControl : MonoBehaviour
 {
     public static bool gameIsPaused;
+    private GameObject textePause;
 
     public PlayerInput joueurInput;
     private PlayerInput pausedInput;
@@ -15,6 +17,8 @@ public class PauseControl : MonoBehaviour
     {
         gameIsPaused = false;
 
+        textePause
+        
         pausedInput = GetComponent<PlayerInput>();
         pausedInput.enabled = false;
     }
