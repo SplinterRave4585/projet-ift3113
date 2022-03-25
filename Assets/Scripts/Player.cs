@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] public LayerMask attacksLayerMask;
     public float parryRange = 1.0f;
     private bool parry = false;
-    
+    private bool hurt = false;
     
     [Header("Actions")] 
     private InputAction saut;
@@ -34,24 +34,24 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidbodyJoueur;
     private BoxCollider2D colliderJoueur;
 
-    public float maxSpeedX = 10f;
-
-    public float jumpSpeed = 20f;
-    public float walkSpeed = 10f;
+    public float jumpSpeed = 12.5f;
+    public float walkSpeed = 7f;
     private float glideSpeed;
-    [HideInInspector] public float orientation = 1;
+    [HideInInspector] public int orientation = 1;
 
     private Vector2 currentMove;
     
     private float vitesseX;
-    private bool landed = false;
 
     public Animator animator;
     public GameObject healthBar;
-    
 
+    private float scaleX;
+    
     void Awake()
     {
+        scaleX = transform.localScale.x;
+        
         rigidbodyJoueur = GetComponent<Rigidbody2D>();
         colliderJoueur = GetComponent<BoxCollider2D>();
         actionMap = inputManager.FindActionMap("Player");
@@ -67,52 +67,84 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        //if (IsGrounded()) animator.SetBool("isGrounded", true);
-        //else if (!IsGrounded()) animator.SetBool("isGrounded", false);
+        
+        if (orientation == 1)
+            gameObject.transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
+        else if (orientation == -1)
+            gameObject.transform.localScale = new Vector3(-scaleX, transform.localScale.y, transform.localScale.z);
+        
+        
+        
+        if (IsGrounded()) animator.SetBool("isGrounded", true);
+        else if (!IsGrounded()) animator.SetBool("isGrounded", false);
+        
 
         vitesseX = rigidbodyJoueur.velocity.x;
 
-        //animator.SetFloat("vitesseX",vitesseX);
+        
+        animator.SetFloat("vitesseX",Mathf.Abs(vitesseX));
 
-        //animator.SetFloat("vitesseY", rigidbodyJoueur.velocity.y);
+        animator.SetFloat("vitesseY", rigidbodyJoueur.velocity.y);
+        
+        if (hurt) animator.SetBool("hurt", true);
+        else if (!hurt) animator.SetBool("hurt", false);
 
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt")) hurt = false;
+
+        if (parry) animator.SetBool("isParrying", true);
+        else if (!parry) animator.SetBool("isParrying", false);
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Parry"))
+        {
+            parry = false;
+        }
+        
         if (distanceAttack * orientation != attackPoint.transform.localPosition.x)
             attackPoint.transform.localPosition = new Vector3(distanceAttack * orientation, 0, 0);
-
-        
         
     }
-
+    
     void FixedUpdate()
     {
+
+        vitesseX = rigidbodyJoueur.velocity.x;
+        
         
         if (IsGrounded())
         {
-            if (!landed)
-            {
-                rigidbodyJoueur.velocity = new Vector2(vitesseX, 0);
-                landed = true;
-            }
+            rigidbodyJoueur.velocity = new Vector2(currentMove.x * walkSpeed, rigidbodyJoueur.velocity.y) ;
+            /*
+            Debug.Log("force appliquée : " + currentMove * walkSpeed);
             rigidbodyJoueur.AddForce(currentMove * walkSpeed, ForceMode2D.Force);
+            
+            //rigidbodyJoueur.velocity = new Vector2(currentMove.x * walkSpeed, rigidbodyJoueur.velocity.y);
+            Vector3 velocity = currentMove * walkSpeed * Time.fixedDeltaTime;
+            velocity.y = rigidbodyJoueur.velocity.y;
+            Debug.Log("velocité : " + velocity);      */ 
         }
         else if (!IsGrounded())
         {
+            rigidbodyJoueur.velocity = new Vector2(currentMove.x * glideSpeed, rigidbodyJoueur.velocity.y) ;
+            /*
+            Debug.Log("force appliquée : " + currentMove * walkSpeed);
             rigidbodyJoueur.AddForce(currentMove * glideSpeed, ForceMode2D.Force);
-            landed = false;
-            vitesseX = rigidbodyJoueur.velocity.x;
-
+            //rigidbodyJoueur.velocity = new Vector2(currentMove.x * glideSpeed, rigidbodyJoueur.velocity.y);
+            Vector3 velocity = currentMove * glideSpeed * Time.fixedDeltaTime;
+            velocity.y = rigidbodyJoueur.velocity.y;
+            Debug.Log("velocité : " + velocity);
+            rigidbodyJoueur.velocity = velocity;
+            */
         }
-
+    
+        
+        
+        
         if (rigidbodyJoueur.velocity.y < -0.01f && !IsGrounded()) rigidbodyJoueur.gravityScale = 4;
         else if (rigidbodyJoueur.velocity.y >= 0 || IsGrounded())
         {
             rigidbodyJoueur.gravityScale = 2;
-            rigidbodyJoueur.velocity = new Vector2(vitesseX, rigidbodyJoueur.velocity.y);
+            
 
-        }
-        if (Math.Abs(rigidbodyJoueur.velocity.x) > maxSpeedX)
-        {
-            rigidbodyJoueur.velocity =  new Vector2(maxSpeedX * orientation, rigidbodyJoueur.velocity.y);
         }
 
         if (colliderJoueur.IsTouchingLayers(attacksLayerMask) && !parry && !invulnerable)
@@ -130,6 +162,7 @@ public class Player : MonoBehaviour
             Parry();
             
         }
+
     }
 
     private bool IsGrounded()
@@ -137,7 +170,7 @@ public class Player : MonoBehaviour
         float extraHeightText = .1f;
         RaycastHit2D raycastHit = Physics2D.BoxCast(colliderJoueur.bounds.center, colliderJoueur.bounds.size, 0f,
             Vector2.down, extraHeightText, platformLayerMask);
-
+        
         return raycastHit.collider != null;
     }
 
@@ -163,6 +196,7 @@ public class Player : MonoBehaviour
 
     void Damage(Vector3 direction)
     {
+        hurt = true;
         Debug.Log("player damaged");
         invulnerable = true;
         rigidbodyJoueur.AddForce(50 * (transform.position - direction), ForceMode2D.Force);
@@ -190,8 +224,8 @@ public class Player : MonoBehaviour
         currentMove = new Vector2(context.ReadValue<float>(), 0);
         if (context.ReadValue<float>() != 0)
         {
-            if (context.ReadValue<float>() < 0) orientation = -1.0f;
-            else if (context.ReadValue<float>() > 0) orientation = 1.0f;
+            if (context.ReadValue<float>() < 0) orientation = -1;
+            else if (context.ReadValue<float>() > 0) orientation = 1;
         }
         
     }
@@ -213,7 +247,7 @@ public class Player : MonoBehaviour
             Debug.Log("parry");
             parry = true;
             invulnerable = true;
-            StartCoroutine(parryTiming(0.5f));
+            //StartCoroutine(parryTiming(0.5f));
         }
     }
 
@@ -226,8 +260,13 @@ public class Player : MonoBehaviour
 
     IEnumerator iFrames(float s)
     {
+        // ghost layer
+        gameObject.layer = LayerMask.NameToLayer("Ghost");
         yield return new WaitForSeconds(s);
         invulnerable = false;
+        // player layer
+        gameObject.layer = LayerMask.NameToLayer("Player");
+        
     }
     
 

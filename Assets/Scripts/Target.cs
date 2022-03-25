@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 enum Etats
@@ -80,7 +81,7 @@ public class Target : Ennemy
         yield return new WaitForSeconds(idle_time);
         state = Etats.ATTACKING;
     }
-
+    
     IEnumerator waitStun()
     {
         yield return new WaitForSeconds(stun_time);
