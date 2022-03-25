@@ -15,6 +15,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "03327050-9cd9-40bf-88a5-870b6b5c77cf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MenuUp",
                     "type": "Button",
                     "id": "6103c4e3-c918-49f1-b411-a492397432d0",
@@ -86,6 +95,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MenuDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eedd981c-ed71-44d2-978e-d1776b66489f",
+                    "path": "<Keyboard>/#(Q)",
+                    "interactions": "Hold(duration=5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

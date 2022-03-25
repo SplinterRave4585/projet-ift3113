@@ -10,26 +10,20 @@ public class PauseControl : MonoBehaviour
 
     public PlayerInput joueurInput;
     private PlayerInput pausedInput;
+    private Canvas menuScreen;
 
     // Start is called before the first frame update
     void Start()
-    {
-        gameIsPaused = false;
-        
+    {   
         pausedInput = GetComponent<PlayerInput>();
-        pausedInput.enabled = false;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        menuScreen = GetComponent<Canvas>();
     }
 
     // Pauses the game
     public void PauseGame()
     {
-        gameIsPaused = true;
+        menuScreen.enabled = true;
         joueurInput.enabled = false;
         pausedInput.enabled = true;
 
@@ -38,10 +32,16 @@ public class PauseControl : MonoBehaviour
 
     public void UnpauseGame()
     {
-        gameIsPaused = false;
+        menuScreen.enabled = false;
         pausedInput.enabled = false;
         joueurInput.enabled = true;
 
         Time.timeScale = 1;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("called: Application.Quit()");
     }
 }
