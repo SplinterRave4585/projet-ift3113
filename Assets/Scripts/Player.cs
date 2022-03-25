@@ -167,6 +167,7 @@ public class Player : MonoBehaviour
         invulnerable = true;
         rigidbodyJoueur.AddForce(50 * (transform.position - direction), ForceMode2D.Force);
         if (--HP <= 0) Die();
+        healthBar.GetComponent<RengeGames.HealthBars.UltimateCircularHealthBar>().AddRemoveSegments(1);
         StartCoroutine(iFrames(3.0f));
     }
 
