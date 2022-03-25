@@ -177,7 +177,7 @@ public class BasicEnnemy : Ennemy
         var moveDirection = (player.transform.position - transform.position).normalized * moveSpeed;
         if (player.transform.position.x - transform.position.x < 0) direction = -1;
         else if (player.transform.position.x - transform.position.x > 0) direction = 1;
-        rigidbodyEnemy.velocity = new Vector2(moveDirection.x, 0);
+        rigidbodyEnemy.velocity = new Vector2(moveDirection.x, rigidbodyEnemy.velocity.y);
     }
 
     IEnumerator windUpAttack()

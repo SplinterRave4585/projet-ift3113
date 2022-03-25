@@ -43,6 +43,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     {
         if (other == triggerFinLvl)
         {
+            transform.position = new Vector3(0, 0, 0);
             Application.Quit();
             Debug.Log("quitte");
         }
