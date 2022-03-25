@@ -67,7 +67,7 @@ public class BasicEnnemy : Ennemy
             case BasicEnnemyEtats.IDLE:
                 Debug.Log("IDLE");
                 Move();
-                if (Math.Abs(player.transform.position.x - transform.position.x) <= detectionRadius && Math.Abs(player.transform.position.y - transform.position.y) <= 2.0f)
+                if (Mathf.Abs(player.transform.position.x - transform.position.x) <= detectionRadius && Mathf.Abs(player.transform.position.y - transform.position.y) <= 2.0f)
                 {
                     state = BasicEnnemyEtats.CHASING;
                 }
@@ -75,9 +75,9 @@ public class BasicEnnemy : Ennemy
             case BasicEnnemyEtats.CHASING:
                 Debug.Log("CHASE");
                 TrackPlayer();
-                if (Math.Abs(player.transform.position.x - transform.position.x) >= 2 * detectionRadius)
+                if (Mathf.Abs(player.transform.position.x - transform.position.x) >= 2 * detectionRadius)
                     state = BasicEnnemyEtats.IDLE;
-                else if (Math.Abs(player.transform.position.x - transform.position.x) <= attackRadius && !attack_cooldown)
+                else if (Mathf.Abs(player.transform.position.x - transform.position.x) <= attackRadius && !attack_cooldown)
                     state = BasicEnnemyEtats.ATTACKING;
                 break;
             case BasicEnnemyEtats.ATTACKING:
@@ -134,6 +134,7 @@ public class BasicEnnemy : Ennemy
     override public void Parried()
     {
         state = BasicEnnemyEtats.STUNNED;
+        colliderAttack.enabled = false;
     }
 
     override public void Die()
@@ -190,7 +191,7 @@ public class BasicEnnemy : Ennemy
     {
         coroutine_attack_running = true;
         yield return new WaitForSeconds(.5f);
-        rigidbodyEnemy.velocity = new Vector2(20, 0) * direction;
+        rigidbodyEnemy.velocity = new Vector2(15, 0) * direction;
         animator.SetBool("isAttacking", true);
         coroutine_attack_running = false;
     }
