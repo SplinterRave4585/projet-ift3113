@@ -1,6 +1,6 @@
 {
-  "tutoJump" : "Pour sauter, appuyez sur la barre d'espace ou W.",
-  "tutoParry" : "Les attaques des ennemis peuvent être esquivées en sautant. Elles peuvent aussi être parrées en appuyant sur clic-droit juste avant qu'elles atteignent le joueur.",
-  "tutoAttack" : "Pour attaquer, appuyez sur le clic-gauche.",
-  "tutoCombat" : "Les attaques ne peuvent pas être parrées lorsque Bandit est dans les airs. Faites donc attention pour ne pas vous mettre en position vulnérable en sautant au mauvais moment."
+  "tutoJump" : "Pour sauter, appuyez sur la barre d'espace ou W. ",
+  "tutoParry" : "Les attaques des ennemis peuvent etre esquivees en sautant. Elles peuvent aussi etre parees en appuyant sur clic-droit juste avant qu'elles atteignent le joueur. Cet ennemi fige avant de se projeter pour attaquer, essayez de parer ses attaques afin de le paralyser.",
+  "tutoAttack" : "Pour attaquer, appuyez sur le clic-gauche. Essayez d'attaquer l'ennemi.",
+  "tutoCombat" : "Les attaques ne peuvent pas etre parees lorsque Bandit est dans les airs. Faites donc attention pour ne pas vous mettre en position vulnerable en sautant au mauvais moment."
 }
