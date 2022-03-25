@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private InputAction parrage;
 
     [Header("Stats")] 
-    private int HP = 3;
+    private int HP = 5;
     private bool invulnerable = false;
 
     private Rigidbody2D rigidbodyJoueur;
@@ -113,27 +113,10 @@ public class Player : MonoBehaviour
         if (IsGrounded())
         {
             rigidbodyJoueur.velocity = new Vector2(currentMove.x * walkSpeed, rigidbodyJoueur.velocity.y) ;
-            /*
-            Debug.Log("force appliquée : " + currentMove * walkSpeed);
-            rigidbodyJoueur.AddForce(currentMove * walkSpeed, ForceMode2D.Force);
-            
-            //rigidbodyJoueur.velocity = new Vector2(currentMove.x * walkSpeed, rigidbodyJoueur.velocity.y);
-            Vector3 velocity = currentMove * walkSpeed * Time.fixedDeltaTime;
-            velocity.y = rigidbodyJoueur.velocity.y;
-            Debug.Log("velocité : " + velocity);      */ 
         }
         else if (!IsGrounded())
         {
             rigidbodyJoueur.velocity = new Vector2(currentMove.x * glideSpeed, rigidbodyJoueur.velocity.y) ;
-            /*
-            Debug.Log("force appliquée : " + currentMove * walkSpeed);
-            rigidbodyJoueur.AddForce(currentMove * glideSpeed, ForceMode2D.Force);
-            //rigidbodyJoueur.velocity = new Vector2(currentMove.x * glideSpeed, rigidbodyJoueur.velocity.y);
-            Vector3 velocity = currentMove * glideSpeed * Time.fixedDeltaTime;
-            velocity.y = rigidbodyJoueur.velocity.y;
-            Debug.Log("velocité : " + velocity);
-            rigidbodyJoueur.velocity = velocity;
-            */
         }
     
         
@@ -197,7 +180,6 @@ public class Player : MonoBehaviour
     void Damage(Vector3 direction)
     {
         hurt = true;
-        Debug.Log("player damaged");
         invulnerable = true;
         rigidbodyJoueur.AddForce(50 * (transform.position - direction), ForceMode2D.Force);
         if (--HP <= 0) Die();
@@ -207,7 +189,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        HP = 3;
+        HP = 5;
         Debug.Log("le joueur est mort");
     }
     
@@ -242,12 +224,10 @@ public class Player : MonoBehaviour
 
     public void doParry(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && IsGrounded())
         {
-            Debug.Log("parry");
             parry = true;
             invulnerable = true;
-            //StartCoroutine(parryTiming(0.5f));
         }
     }
 

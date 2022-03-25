@@ -65,7 +65,6 @@ public class BasicEnnemy : Ennemy
         switch (state)
         {
             case BasicEnnemyEtats.IDLE:
-                Debug.Log("IDLE");
                 Move();
                 if (Mathf.Abs(player.transform.position.x - transform.position.x) <= detectionRadius && Mathf.Abs(player.transform.position.y - transform.position.y) <= 2.0f)
                 {
@@ -73,7 +72,6 @@ public class BasicEnnemy : Ennemy
                 }
                 break;
             case BasicEnnemyEtats.CHASING:
-                Debug.Log("CHASE");
                 TrackPlayer();
                 if (Mathf.Abs(player.transform.position.x - transform.position.x) >= 2 * detectionRadius)
                     state = BasicEnnemyEtats.IDLE;
@@ -81,14 +79,12 @@ public class BasicEnnemy : Ennemy
                     state = BasicEnnemyEtats.ATTACKING;
                 break;
             case BasicEnnemyEtats.ATTACKING:
-                Debug.Log("ATTACK");
                 if (!attack_started && !coroutine_attack_running)
                 {
                     Attack();
                 }
                 else if (coroutine_attack_running)
                 {
-                    Debug.Log("COROUTINE RUNNING");
                     rigidbodyEnemy.velocity = Vector2.zero;
                 }
                 else if (!coroutine_attack_running && attack_started && animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "attack")
@@ -105,7 +101,6 @@ public class BasicEnnemy : Ennemy
                 if (!is_stunned) StartCoroutine(stunTimer());
                 else
                 {
-                    Debug.Log("STUNNED");
                     rigidbodyEnemy.velocity = Vector2.zero;
                 }
                 break;
@@ -124,7 +119,6 @@ public class BasicEnnemy : Ennemy
 
     override public void Damage()
     {
-        Debug.Log("DAMAGE");
         if (vulnerable)
         {
             if (--HP == 0) Die();
@@ -140,7 +134,6 @@ public class BasicEnnemy : Ennemy
     override public void Die()
     {
         HP = 2;
-        Debug.Log("ENEMY DEAD");
         gameObject.SetActive(false);
     }
 
@@ -159,7 +152,7 @@ public class BasicEnnemy : Ennemy
         {
             if (transform.position.x <= startPos.x + moveRadius)
             {
-                rigidbodyEnemy.velocity = new Vector2(moveSpeed, 0);
+                rigidbodyEnemy.velocity = new Vector2(moveSpeed, rigidbodyEnemy.velocity.y);
             }
             else
             {
@@ -170,7 +163,7 @@ public class BasicEnnemy : Ennemy
         {
             if (transform.position.x >= startPos.x - moveRadius)
             {
-                rigidbodyEnemy.velocity = new Vector2(-moveSpeed, 0);
+                rigidbodyEnemy.velocity = new Vector2(-moveSpeed, rigidbodyEnemy.velocity.y);
             }
             else
             {
