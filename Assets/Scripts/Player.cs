@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
         
         
         
-        if (rigidbodyJoueur.velocity.y < -0.01f && !IsGrounded()) rigidbodyJoueur.gravityScale = 4;
+        if (rigidbodyJoueur.velocity.y < -0.01f && !IsGrounded()) rigidbodyJoueur.gravityScale = 3;
         else if (rigidbodyJoueur.velocity.y >= 0 || IsGrounded())
         {
             rigidbodyJoueur.gravityScale = 2;
