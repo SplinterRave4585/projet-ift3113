@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 819987e1edc943b4fa1b1fbb06080c5b, type: 3}
-  m_Name: BanditAnim
+  m_Name: BanditHarmony2
   m_EditorClassIdentifier: 
-  HarmonyXMLProjectPath: C:/Users/Simon/Desktop/v149_test - Copie/frames/toUnity/Bandit
-  OutputPath: Assets/Bandit/BanditAnimProject.asset
+  HarmonyXMLProjectPath: C:/Users/Simon/Desktop/v147 - Copie/frames/toUnity/Bandit
+  OutputPath: Assets/BanditV2/BanditHarmony2Project.asset
   GeneratePrefab: 1
-  ExistingPrefab: {fileID: 1654205990001254688, guid: d0ce8078c9842f341b037de2c25a4962, type: 3}
+  ExistingPrefab: {fileID: 4225567859611736714, guid: cff08d7c0a339334dbf1b3d660e43408, type: 3}
   AnimationSettings:
     FrameRate: 24
     Stepped: 1

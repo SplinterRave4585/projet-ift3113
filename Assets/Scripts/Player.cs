@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] public LayerMask attacksLayerMask;
     public float parryRange = 1.0f;
     private bool parry = false;
-    
+    private bool hurt = false;
     
     [Header("Actions")] 
     private InputAction saut;
@@ -86,8 +86,11 @@ public class Player : MonoBehaviour
 
         animator.SetFloat("vitesseY", rigidbodyJoueur.velocity.y);
         
-        
-        
+        if (hurt) animator.SetBool("hurt", true);
+        else if (!hurt) animator.SetBool("hurt", false);
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt")) hurt = false;
+
         if (parry) animator.SetBool("isParrying", true);
         else if (!parry) animator.SetBool("isParrying", false);
 
@@ -100,11 +103,6 @@ public class Player : MonoBehaviour
             attackPoint.transform.localPosition = new Vector3(distanceAttack * orientation, 0, 0);
         
     }
-
-    /*
-     * PARRY QUI CHANGE QUAND ANIM FINI
-     */
-    
     
     void FixedUpdate()
     {
@@ -198,6 +196,7 @@ public class Player : MonoBehaviour
 
     void Damage(Vector3 direction)
     {
+        hurt = true;
         Debug.Log("player damaged");
         invulnerable = true;
         rigidbodyJoueur.AddForce(50 * (transform.position - direction), ForceMode2D.Force);
@@ -260,8 +259,13 @@ public class Player : MonoBehaviour
 
     IEnumerator iFrames(float s)
     {
+        // ghost layer
+        gameObject.layer = LayerMask.NameToLayer("Ghost");
         yield return new WaitForSeconds(s);
         invulnerable = false;
+        // player layer
+        gameObject.layer = LayerMask.NameToLayer("Player");
+        
     }
     
 

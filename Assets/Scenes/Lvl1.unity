@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32753548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13194,7 +13194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1379456251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13756,49 +13756,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1063798259300204265, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: jumpSpeed
-      value: 12.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063798259300204265, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: walkSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035560, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 0cb631019ef926b48b421fd57e59353c, type: 2}
-    - target: {fileID: 2007749435551035560, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_GravityScale
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035561, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Size.x
-      value: 0.9512576
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035561, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9148148
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035561, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.024371192
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035561, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.042592585
-      objectReference: {fileID: 0}
     - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.282018
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.100348
       objectReference: {fileID: 0}
     - target: {fileID: 2007749435551035562, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13840,37 +13800,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035563, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035563, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035563, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2007749435551035563, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 2007749435551035566, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_Name
-      value: JoueurNoAnim
+      value: Joueur
       objectReference: {fileID: 0}
     - target: {fileID: 3979574787991495358, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314446774338599609, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: CurrentFrame
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314446774338599609, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
-      propertyPath: CurrentClipIndex
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c764bc14523fc7d4a92b9f512e8a4e7e, type: 3}
