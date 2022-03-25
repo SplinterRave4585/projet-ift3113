@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PauseControl : MonoBehaviour
 {
     public static bool gameIsPaused;
-    private GameObject textePause;
 
     public PlayerInput joueurInput;
     private PlayerInput pausedInput;
@@ -16,8 +15,6 @@ public class PauseControl : MonoBehaviour
     void Start()
     {
         gameIsPaused = false;
-
-        textePause
         
         pausedInput = GetComponent<PlayerInput>();
         pausedInput.enabled = false;
