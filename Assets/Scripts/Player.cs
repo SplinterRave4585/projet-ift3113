@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     public GameObject healthBar;
 
     private float scaleX;
+
+    private bool iframes = false;
     
     void Awake()
     {
@@ -98,11 +100,13 @@ public class Player : MonoBehaviour
         {
             parry = false;
         }
-        
+
+        if (!parry && !iframes) invulnerable = false;
+
         // uncomment if inversion scale removed
         //if (distanceAttack * orientation != attackPoint.transform.localPosition.x)
         //   attackPoint.transform.localPosition = new Vector3(distanceAttack * orientation, 0, 0);
-        
+
     }
     
     void FixedUpdate()
@@ -242,9 +246,11 @@ public class Player : MonoBehaviour
     IEnumerator iFrames(float s)
     {
         // ghost layer
+        iframes = true;
         gameObject.layer = LayerMask.NameToLayer("Ghost");
         yield return new WaitForSeconds(s);
         invulnerable = false;
+        iframes = false;
         // player layer
         gameObject.layer = LayerMask.NameToLayer("Player");
         

@@ -22,7 +22,7 @@ public class TextesLvl1
 
 public class ProgressionControllerLvl1 : MonoBehaviour
 {
-    public string pathJson;
+    private string pathJson = Application.streamingAssetsPath + "/Textes/textsLvl1.json";
     private TextesLvl1 textes;
 
     public GameObject zoneTexte; 
