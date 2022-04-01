@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using Scene = UnityEditor.SearchService.Scene;
 
 public class PauseControl : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class PauseControl : MonoBehaviour
     public PlayerInput joueurInput;
     private PlayerInput pausedInput;
     private Canvas menuScreen;
+
+    public TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +30,24 @@ public class PauseControl : MonoBehaviour
         menuScreen.enabled = true;
         joueurInput.enabled = false;
         pausedInput.enabled = true;
+        text.SetText("PAUSED");
 
         Time.timeScale = 0f;
     }
 
     public void UnpauseGame()
     {
-        menuScreen.enabled = false;
-        pausedInput.enabled = false;
-        joueurInput.enabled = true;
+        if (text.text != "PAUSED")
+        {
+            var scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+        else
+        {
+            menuScreen.enabled = false;
+            pausedInput.enabled = false;
+            joueurInput.enabled = true;
+        }
 
         Time.timeScale = 1;
     }

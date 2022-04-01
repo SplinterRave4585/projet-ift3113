@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
     private float scaleX;
 
     private bool iframes = false;
+
+    public PauseControl pause;
     
     void Awake()
     {
@@ -195,7 +197,15 @@ public class Player : MonoBehaviour
     void Die()
     {
         HP = 5;
+        pause.PauseGame();
+        pause.text.SetText(ProgressionControllerLvl1.textes.mortJoueur);
+        Time.timeScale = 0f;
         Debug.Log("le joueur est mort");
+    }
+
+    public int getHP()
+    {
+        return HP;
     }
     
     public void doJump(InputAction.CallbackContext context)

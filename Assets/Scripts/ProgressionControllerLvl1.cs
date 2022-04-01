@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
@@ -13,6 +14,10 @@ public class TextesLvl1
     public string tutoParry;
     public string tutoAttack;
     public string tutoCombat;
+    public string pause;
+    public string finPartie;
+    public string mortJoueur;
+    
         
     public static TextesLvl1 CreateFromJSON(string jsonString)
     {
@@ -23,10 +28,13 @@ public class TextesLvl1
 
 public class ProgressionControllerLvl1 : MonoBehaviour
 {
-    private string pathJson = Application.streamingAssetsPath + "/Textes/textsLvl1.json";
-    private TextesLvl1 textes;
+    public PauseControl pause;
 
-    public GameObject zoneTexte; 
+    private string pathJson = Application.streamingAssetsPath + "/Textes/textsLvl1.json";
+    public static TextesLvl1 textes;
+
+    public GameObject zoneTexte;
+    public TextMeshProUGUI texteMenu;
     
     public Collider2D triggerFinLvl;
     public Collider2D triggerTutoJump;
@@ -36,6 +44,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     
     void Start()
     {
+
         StreamReader reader = new StreamReader(pathJson);
         textes = TextesLvl1.CreateFromJSON(reader.ReadToEnd());
         reader.Close();
@@ -44,9 +53,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     {
         if (other == triggerFinLvl)
         {
-            transform.position = new Vector3(0, 0, 0);
-            Application.Quit();
-            Debug.Log("quitte");
+            EndGame();
         }
         else if (other == triggerTutoJump)
         {
@@ -73,4 +80,12 @@ public class ProgressionControllerLvl1 : MonoBehaviour
         zoneTexte.GetComponent<TextMeshProUGUI>().SetText("");
     }
 
+    private void EndGame()
+    {
+        pause.PauseGame();
+        texteMenu.SetText(textes.finPartie);
+
+        Time.timeScale = 0f;
+    }
+    
 }
