@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class TextesLvl1
@@ -63,6 +64,8 @@ public class ProgressionControllerLvl1 : MonoBehaviour
         {
             zoneTexte.GetComponent<TextMeshProUGUI>().SetText(textes.tutoCombat);
         }
+
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
