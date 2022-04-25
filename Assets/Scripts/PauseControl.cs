@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using Scene = UnityEditor.SearchService.Scene;
 
 public class PauseControl : MonoBehaviour
 {
@@ -30,14 +29,14 @@ public class PauseControl : MonoBehaviour
         menuScreen.enabled = true;
         joueurInput.enabled = false;
         pausedInput.enabled = true;
-        text.SetText("PAUSED");
+        text.SetText("PAUSE");
 
         Time.timeScale = 0f;
     }
 
     public void UnpauseGame()
     {
-        if (text.text != "PAUSED")
+        if (text.text != "PAUSE")
         {
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
