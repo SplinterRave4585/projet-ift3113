@@ -1,0 +1,12 @@
+<skeletons>
+ <skeleton name="Top">
+  <nodes>
+   <peg id="0" name="grimm-P"/>
+   <read id="1" name="grimm"/>
+  </nodes>
+  <links>
+   <link in="Top" out="0"/>
+   <link in="0" out="1"/>
+  </links>
+ </skeleton>
+</skeletons>

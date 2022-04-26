@@ -1,0 +1,6 @@
+<stages>
+ <stage name="v86_test - Copie_talk">
+  <node groupId="0" skinId="0" name="grimm" drwId="1"/>
+  <play drawingAnimation="talk_Top" name="Top" skeleton="Top" animation="talk_Top"/>
+ </stage>
+</stages>

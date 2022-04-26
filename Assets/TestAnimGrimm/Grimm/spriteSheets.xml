@@ -1,0 +1,27 @@
+<!DOCTYPE spritesheets>
+<spritesheets>
+ <spritesheet resolution="ipad" width="2048" height="512" name="sheet_Top-v86_test" filename="spriteSheets/sheet_Top-v86_test-ipad.png">
+  <sprite scaleY="1" angleDegrees="0" rect="1383,0,461,471" offsetX="-89.4932" offsetY="239.183" name="2-grimm-1.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="922,0,461,471" offsetX="-89.4932" offsetY="239.183" name="2-grimm-3.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="461,0,461,471" offsetX="-89.4932" offsetY="239.183" name="2-grimm-4.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="0,0,461,471" offsetX="-89.4932" offsetY="239.183" name="2-grimm-5.png" scaleX="1"/>
+ </spritesheet>
+ <spritesheet resolution="ipad-retina" width="2048" height="2048" name="sheet_Top-v86_test" filename="spriteSheets/sheet_Top-v86_test-ipad-retina.png">
+  <sprite scaleY="0.5" angleDegrees="0" rect="910,931,910,931" offsetX="-178.986" offsetY="478.366" name="2-grimm-1.png" scaleX="0.5"/>
+  <sprite scaleY="0.5" angleDegrees="0" rect="0,931,910,931" offsetX="-178.986" offsetY="478.366" name="2-grimm-3.png" scaleX="0.5"/>
+  <sprite scaleY="0.5" angleDegrees="0" rect="910,0,910,931" offsetX="-178.986" offsetY="478.366" name="2-grimm-4.png" scaleX="0.5"/>
+  <sprite scaleY="0.5" angleDegrees="0" rect="0,0,910,931" offsetX="-178.986" offsetY="478.366" name="2-grimm-5.png" scaleX="0.5"/>
+ </spritesheet>
+ <spritesheet resolution="iphone" width="1024" height="256" name="sheet_Top-v86_test" filename="spriteSheets/sheet_Top-v86_test-iphone.png">
+  <sprite scaleY="2.13333" angleDegrees="0" rect="666,0,222,227" offsetX="-41.9499" offsetY="112.117" name="2-grimm-1.png" scaleX="2.13333"/>
+  <sprite scaleY="2.13333" angleDegrees="0" rect="444,0,222,227" offsetX="-41.9499" offsetY="112.117" name="2-grimm-3.png" scaleX="2.13333"/>
+  <sprite scaleY="2.13333" angleDegrees="0" rect="222,0,222,227" offsetX="-41.9499" offsetY="112.117" name="2-grimm-4.png" scaleX="2.13333"/>
+  <sprite scaleY="2.13333" angleDegrees="0" rect="0,0,222,227" offsetX="-41.9499" offsetY="112.117" name="2-grimm-5.png" scaleX="2.13333"/>
+ </spritesheet>
+ <spritesheet resolution="iphone-retina" width="2048" height="1024" name="sheet_Top-v86_test" filename="spriteSheets/sheet_Top-v86_test-iphone-retina.png">
+  <sprite scaleY="0.901408" angleDegrees="0" rect="1530,0,510,521" offsetX="-99.2815" offsetY="265.344" name="2-grimm-1.png" scaleX="0.901408"/>
+  <sprite scaleY="0.901408" angleDegrees="0" rect="1020,0,510,521" offsetX="-99.2815" offsetY="265.344" name="2-grimm-3.png" scaleX="0.901408"/>
+  <sprite scaleY="0.901408" angleDegrees="0" rect="510,0,510,521" offsetX="-99.2815" offsetY="265.344" name="2-grimm-4.png" scaleX="0.901408"/>
+  <sprite scaleY="0.901408" angleDegrees="0" rect="0,0,510,521" offsetX="-99.2815" offsetY="265.344" name="2-grimm-5.png" scaleX="0.901408"/>
+ </spritesheet>
+</spritesheets>

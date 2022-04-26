@@ -1,0 +1,23 @@
+<animations>
+ <animation name="talk_Top">
+  <attrlinks>
+   <attrlink attr="rotation.anglez" node="grimm-P" value="-2.040010665105556"/>
+   <attrlink attr="position.x" node="grimm-P" value="-169.2103124330667"/>
+   <attrlink attr="position.y" node="grimm-P" value="-420.7872032874"/>
+   <attrlink attr="scale.x" node="grimm-P" value="1.0407"/>
+   <attrlink attr="scale.y" node="grimm-P" value="0.9839"/>
+   <attrlink attr="skew" node="grimm-P" value="-4.6583"/>
+   <attrlink attr="pivot" node="grimm-P" timedvalue="PIVOT-TV-grimm-P"/>
+   <attrlink attr="pivot" node="grimm" timedvalue="PIVOT-TV-grimm"/>
+   <attrlink attr="opacity" node="grimm" value="1"/>
+  </attrlinks>
+  <timedvalues>
+   <pivot name="PIVOT-TV-grimm-P">
+    <pt x="-83.51785186818927" y="261.0782119400878" z="0" start="1"/>
+   </pivot>
+   <pivot name="PIVOT-TV-grimm">
+    <pt x="-89.78566936409349" y="258.8836542589572" z="0" start="1"/>
+   </pivot>
+  </timedvalues>
+ </animation>
+</animations>

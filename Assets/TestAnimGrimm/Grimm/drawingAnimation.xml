@@ -1,0 +1,13 @@
+<drawingAnimations>
+ <drawingAnimation spritesheet="sheet_Top-v86_test" name="talk_Top">
+  <drawing node="grimm" name="2-grimm" drwId="1">
+   <drw skinId="0" frame="1" repeat="46" name="2-grimm-3.png"/>
+   <drw skinId="0" frame="47" repeat="3" name="2-grimm-4.png"/>
+   <drw skinId="0" frame="50" repeat="3" name="2-grimm-1.png"/>
+   <drw skinId="0" frame="53" repeat="3" name="2-grimm-5.png"/>
+   <drw skinId="0" frame="56" repeat="3" name="2-grimm-1.png"/>
+   <drw skinId="0" frame="59" repeat="3" name="2-grimm-4.png"/>
+   <drw skinId="0" frame="62" repeat="73" name="2-grimm-3.png"/>
+  </drawing>
+ </drawingAnimation>
+</drawingAnimations>
