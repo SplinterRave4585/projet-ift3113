@@ -10,7 +10,8 @@ enum BasicEnnemyEtats
     IDLE,
     CHASING,
     ATTACKING,
-    STUNNED
+    STUNNED,
+    HIT
 }
 
 public class BasicEnnemy : Ennemy
@@ -105,6 +106,10 @@ public class BasicEnnemy : Ennemy
                     rigidbodyEnemy.angularVelocity = 0;
                 }
                 break;
+            case BasicEnnemyEtats.HIT:
+                if (vulnerable) state = BasicEnnemyEtats.CHASING;
+                else rigidbodyEnemy.velocity = Vector2.zero;
+                break;
         }
     }
 
@@ -122,6 +127,9 @@ public class BasicEnnemy : Ennemy
     {
         if (vulnerable)
         {
+            var directionAttack = player.transform.position - transform.position;
+            directionAttack.y = 0;
+            rigidbodyEnemy.AddForce(directionAttack * 100,ForceMode2D.Force);
             StartCoroutine(IFrames());
             if (--HP == 0) Die();
         }
