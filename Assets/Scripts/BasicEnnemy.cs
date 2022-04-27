@@ -102,6 +102,7 @@ public class BasicEnnemy : Ennemy
                 else
                 {
                     rigidbodyEnemy.velocity = Vector2.zero;
+                    rigidbodyEnemy.angularVelocity = 0;
                 }
                 break;
         }
@@ -201,7 +202,7 @@ public class BasicEnnemy : Ennemy
         is_stunned = true;
         vulnerable = true;
         yield return new WaitForSeconds(3.0f);
-        state = BasicEnnemyEtats.CHASING;
+        state = BasicEnnemyEtats.IDLE;
         is_stunned = false;
     }
 }

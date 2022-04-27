@@ -1,9 +1,9 @@
 {
-  "tutoJump" : "Pour sauter, appuyez sur la barre d'espace ou W. ",
-  "tutoParry" : "Les attaques des ennemis peuvent etre esquivees en sautant. Elles peuvent aussi etre parees en appuyant sur clic-droit juste avant qu'elles atteignent le joueur. Cet ennemi fige avant de se projeter pour attaquer, essayez de parer ses attaques afin de le paralyser.",
-  "tutoAttack" : "Pour attaquer, appuyez sur le clic-gauche. Essayez d'attaquer l'ennemi.",
-  "tutoCombat" : "Les attaques ne peuvent pas etre parees lorsque Bandit est dans les airs. Faites donc attention pour ne pas vous mettre en position vulnerable en sautant au mauvais moment.",
+  "tutoJump" : "Grimm : \nJump with spacebar or W ",
+  "tutoParry" : "Grimm : \nThose idiots are enemies. You can jump over their attacks to dodge them, or you can parry them with right-click if you're not completely stupid. Parrying is really useful to leave enemies vulnerable for retaliation.",
+  "tutoAttack" :  "Grimm :\nPress left-click to attack. Are ya still following?",
+  "tutoCombat" : "Grimm :\nIf you're in the air you can't parry, so be careful not to dig yourself in a hole by jumping around like a hyperactive bunny and get destroyed by 30 attacks.",
   "pause" : "PAUSED",
-  "finPartie" : "FIN DU NIVEAU",
+  "finPartie" : "END OF LEVEL",
   "mortJoueur" : "YOU DIED"
 }

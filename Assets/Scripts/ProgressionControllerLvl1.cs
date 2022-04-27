@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-[System.Serializable]
+
+[Serializable]
 public class TextesLvl1
 {
     [SerializeField]
@@ -41,9 +44,12 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     public Collider2D triggerTutoAttack;
     public Collider2D triggerTutoParry;
     public Collider2D triggerTutoCombat;
+
+    public Color dialogGrimmColor;
     
     void Start()
     {
+        dialogGrimmColor = new Color(72f / 256f, 72f / 256f, 108f / 256f);
 
         StreamReader reader = new StreamReader(pathJson);
         textes = TextesLvl1.CreateFromJSON(reader.ReadToEnd());
@@ -57,19 +63,24 @@ public class ProgressionControllerLvl1 : MonoBehaviour
         }
         else if (other == triggerTutoJump)
         {
+            zoneTexte.GetComponent<TextMeshProUGUI>().color = dialogGrimmColor;
             zoneTexte.GetComponent<TextMeshProUGUI>().SetText(textes.tutoJump);
+            
         }
         else if (other == triggerTutoAttack)
         {
             zoneTexte.GetComponent<TextMeshProUGUI>().SetText(textes.tutoAttack);
+            zoneTexte.GetComponent<TextMeshProUGUI>().color = dialogGrimmColor;
         }
         else if (other == triggerTutoParry)
         {
             zoneTexte.GetComponent<TextMeshProUGUI>().SetText(textes.tutoParry);
+            zoneTexte.GetComponent<TextMeshProUGUI>().color = dialogGrimmColor;
         }
         else if (other == triggerTutoCombat)
         {
             zoneTexte.GetComponent<TextMeshProUGUI>().SetText(textes.tutoCombat);
+            zoneTexte.GetComponent<TextMeshProUGUI>().color = dialogGrimmColor;
         }
 
         
@@ -78,6 +89,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         zoneTexte.GetComponent<TextMeshProUGUI>().SetText("");
+        zoneTexte.GetComponent<TextMeshProUGUI>().color = Color.white;
     }
 
     private void EndGame()

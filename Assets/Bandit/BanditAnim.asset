@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819987e1edc943b4fa1b1fbb06080c5b, type: 3}
   m_Name: BanditAnim
   m_EditorClassIdentifier: 
-  HarmonyXMLProjectPath: C:/Users/Simon/Desktop/v149_test - Copie/frames/toUnity/Bandit
+  HarmonyXMLProjectPath: Assets/Bandit/BanditFinal
   OutputPath: Assets/Bandit/BanditAnimProject.asset
   GeneratePrefab: 1
   ExistingPrefab: {fileID: 1654205990001254688, guid: d0ce8078c9842f341b037de2c25a4962, type: 3}

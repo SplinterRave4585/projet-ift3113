@@ -62,6 +62,11 @@ public class Player : MonoBehaviour
 
     private bool isGrounded = true;
     private bool prevIsGrounded = true;
+
+    private float temps_parry;
+    private float startTime;
+    
+    private bool parry_started = false;
     
     void Awake()
     {
@@ -84,10 +89,24 @@ public class Player : MonoBehaviour
         parrage = actionMap.FindAction("Parry");
         
         glideSpeed = walkSpeed / 2;
+
+        var clips = (animator.runtimeAnimatorController).animationClips;
+        foreach (var clip in clips)
+        {
+            if (clip.name == "Parry")
+            {
+                temps_parry = clip.length;
+                break;
+            }
+        }
+        
     }
 
     void Update()
     {
+        
+        
+        Debug.Log("parry : " + parry.ToString());
 
         IsGrounded();
         
@@ -125,14 +144,17 @@ public class Player : MonoBehaviour
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt")) hurt = false;
 
-        if (parry) animator.SetBool("isParrying", true);
-        else if (!parry) animator.SetBool("isParrying", false);
-
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Parry"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Parry"))
+        {
+            parry_started = true;
+        }
+        
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Parry") && parry_started)
         {
             parry = false;
+            parry_started = false;
         }
-
+        
         if (!parry && !iframes) invulnerable = false;
 
         // uncomment if inversion scale removed
@@ -161,6 +183,9 @@ public class Player : MonoBehaviour
         if (rigidbodyJoueur.velocity.y < -0.01f && !isGrounded) rigidbodyJoueur.gravityScale = 3;
         else if (rigidbodyJoueur.velocity.y >= 0 || isGrounded) rigidbodyJoueur.gravityScale = 2;
 
+        //JUMP ATTACK GRAVITYSCALE BLABLA
+        
+        
         if (colliderJoueur.IsTouchingLayers(attacksLayerMask) && !parry && !invulnerable)
         {
             Vector3 directionAttaque = Vector2.zero;
@@ -174,6 +199,7 @@ public class Player : MonoBehaviour
         }
         else if (parry)
         {
+            Debug.Log("parry");
             Parry();
             
         }
@@ -212,8 +238,8 @@ public class Player : MonoBehaviour
     {
         hurt = true;
         invulnerable = true;
-        rigidbodyJoueur.AddForce(50 * (transform.position - direction), ForceMode2D.Force);
-        if (--HP <= 0) Die();
+        rigidbodyJoueur.AddForce( transform.position - direction, ForceMode2D.Force);
+        if (/*--*/HP <= 0) Die();
         healthBar.GetComponent<RengeGames.HealthBars.UltimateCircularHealthBar>().AddRemoveSegments(1);
         StartCoroutine(iFrames(3.0f));
     }
@@ -266,14 +292,26 @@ public class Player : MonoBehaviour
 
     public void doParry(InputAction.CallbackContext context)
     {
-        if (context.started && isGrounded && !animator.GetCurrentAnimatorStateInfo(0).IsName("Parry"))
+        if (context.started && isGrounded && !parry)
         {
+            Debug.Log("doParry");
             parrySFX.Play();
             parry = true;
+            animator.Play("Parry");
+            //animator.SetTrigger("parry");
             invulnerable = true;
         }
+        
     }
 
+    private IEnumerator WaitForAnimation ( Animation animation )
+    {
+        do
+        {
+            yield return null;
+        } while ( animation.isPlaying );
+    }
+    
     IEnumerator parryTiming(float s)
     {
         yield return new WaitForSeconds(s);
