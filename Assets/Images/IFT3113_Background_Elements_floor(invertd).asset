@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IFT3113_Background_Elements_floor(invertd)
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 329a755b077a105449d69a1ab42613a3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.25490198, g: 0.21568628, b: 0.21568628, a: 1}
   m_Transform:
     e00: 1
     e01: 0
