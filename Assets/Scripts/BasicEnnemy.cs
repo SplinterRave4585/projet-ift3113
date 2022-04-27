@@ -122,6 +122,7 @@ public class BasicEnnemy : Ennemy
     {
         if (vulnerable)
         {
+            StartCoroutine(IFrames());
             if (--HP == 0) Die();
         }
     }
@@ -197,6 +198,12 @@ public class BasicEnnemy : Ennemy
         attack_cooldown = false;
     }
 
+    IEnumerator IFrames()
+    {
+        vulnerable = false;
+        yield return new WaitForSeconds(.4f);
+        vulnerable = true;
+    }
     IEnumerator stunTimer()
     {
         is_stunned = true;

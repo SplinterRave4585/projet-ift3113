@@ -67,6 +67,12 @@ public class Player : MonoBehaviour
     private float startTime;
     
     private bool parry_started = false;
+
+    private float deathAnimationTime = 3.125f;
+    private float attackAnimationTime = 0.4f;
+    private float airAttackAnimationTime = 0.5f;
+
+    private bool attacking = false;
     
     void Awake()
     {
@@ -168,7 +174,8 @@ public class Player : MonoBehaviour
 
         vitesseX = rigidbodyJoueur.velocity.x;
 
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Parry"))
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Parry") &&
+            !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.GetCurrentAnimatorStateInfo(0).IsName("AirAttack"))
         {
             if (isGrounded)
             {
@@ -180,8 +187,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (rigidbodyJoueur.velocity.y < -0.01f && !isGrounded) rigidbodyJoueur.gravityScale = 3;
-        else if (rigidbodyJoueur.velocity.y >= 0 || isGrounded) rigidbodyJoueur.gravityScale = 2;
+        if (!attacking)
+        {
+            if (rigidbodyJoueur.velocity.y < -0.01f && !isGrounded) rigidbodyJoueur.gravityScale = 3;
+            else if (rigidbodyJoueur.velocity.y >= 0 || isGrounded) rigidbodyJoueur.gravityScale = 2;
+        }
 
         //JUMP ATTACK GRAVITYSCALE BLABLA
         
@@ -202,6 +212,11 @@ public class Player : MonoBehaviour
             Debug.Log("parry");
             Parry();
             
+        }
+
+        if (attacking)
+        {
+            Attack();
         }
 
     }
@@ -239,13 +254,15 @@ public class Player : MonoBehaviour
         hurt = true;
         invulnerable = true;
         rigidbodyJoueur.AddForce( transform.position - direction, ForceMode2D.Force);
-        if (/*--*/HP <= 0) Die();
+        if (--HP <= 0) StartCoroutine(Die());
         healthBar.GetComponent<RengeGames.HealthBars.UltimateCircularHealthBar>().AddRemoveSegments(1);
         StartCoroutine(iFrames(3.0f));
     }
 
-    void Die()
+    IEnumerator Die()
     {
+        animator.Play("Death");
+        yield return new WaitForSeconds(deathAnimationTime);
         HP = 5;
         pause.PauseGame();
         pause.text.SetText(ProgressionControllerLvl1.textes.mortJoueur);
@@ -282,10 +299,17 @@ public class Player : MonoBehaviour
     public void doAttack(InputAction.CallbackContext context)
     {
         
-        if (context.started)
+        if (context.started && !attacking)
         {
-            Debug.Log("attaque");
-            Attack();
+            if (isGrounded)
+            {
+                
+                StartCoroutine(waitForAttack());
+            }
+            else
+            {
+                StartCoroutine(waitForAirAttack());
+            }
             attackSFX.Play();
         }
     }
@@ -304,12 +328,23 @@ public class Player : MonoBehaviour
         
     }
 
-    private IEnumerator WaitForAnimation ( Animation animation )
+    IEnumerator waitForAttack()
     {
-        do
-        {
-            yield return null;
-        } while ( animation.isPlaying );
+        attacking = true;
+        animator.Play("Attack");
+        yield return new WaitForSeconds(attackAnimationTime);
+        attacking = false;
+
+    }
+
+    IEnumerator waitForAirAttack()
+    {
+        animator.Play("AirAttack");
+        rigidbodyJoueur.gravityScale = 6;
+        attacking = true;
+        yield return new WaitForSeconds(airAttackAnimationTime);
+        attacking = false;
+        rigidbodyJoueur.gravityScale = 2;
     }
     
     IEnumerator parryTiming(float s)
@@ -332,5 +367,9 @@ public class Player : MonoBehaviour
         
     }
 
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.transform.position, attackRange);
+    }
 }
