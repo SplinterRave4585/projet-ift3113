@@ -21,40 +21,65 @@ public class BasicEnnemy : Ennemy
     
     private GameObject player;
 
-    private Animator animator;
+    public Animator animator;
      
     private Rigidbody2D rigidbodyEnemy;
     private CircleCollider2D colliderEnemy;
     
     private BasicEnnemyEtats state;
     private Vector2 startPos;
-    private int direction = 1;
+    private int direction;
     public float moveSpeed = 2.0f;
     public float moveRadius = 2.0f;
+    public float chaseSpeed = 4.0f;
 
     private bool vulnerable = true;
     private CircleCollider2D colliderAttack;
     private bool attack_started = false;
     
     public float detectionRadius = 6.0f;
-    public float attackRadius = 3.0f;
+    public float attackRadius = 1.0f;
 
     private bool coroutine_attack_running = false;
     private bool attack_cooldown = false;
     private bool is_stunned = false;
+
+    private float attackAnimationTime = 0.750f;
+    private float hurtAnimationTime = 0.333f;
+    private float deathAnimationTime = 0.833f;
+
+    private float scaleX;
+
+    public int startingDirection;
     
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        animator = GetComponent<Animator>();
+        scaleX = transform.localScale.x;
         
+        player = GameObject.FindWithTag("Player");
+
         startPos = transform.position;
         state = BasicEnnemyEtats.IDLE;
         rigidbodyEnemy = GetComponent<Rigidbody2D>();
         colliderEnemy = GetComponent<CircleCollider2D>();
         colliderAttack = gameObject.transform.GetChild(0).GetComponent<CircleCollider2D>();
         colliderAttack.enabled = false;
+    }
+
+    private void Update()
+    {
+        transform.localScale = new Vector3(scaleX * direction, transform.localScale.y, transform.localScale.z);
+        
+        switch (state)
+        {
+            case BasicEnnemyEtats.IDLE:
+                animator.SetBool("chasing",false);
+                break;
+            case BasicEnnemyEtats.CHASING:
+                animator.SetBool("chasing", true);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -80,6 +105,7 @@ public class BasicEnnemy : Ennemy
                     state = BasicEnnemyEtats.ATTACKING;
                 break;
             case BasicEnnemyEtats.ATTACKING:
+                /*
                 if (!attack_started && !coroutine_attack_running)
                 {
                     Attack();
@@ -97,7 +123,9 @@ public class BasicEnnemy : Ennemy
                     StartCoroutine(cooldownAttack());
                     state = BasicEnnemyEtats.CHASING;
                 } 
-                break;
+                */
+                if (!attack_started) Attack();
+                    break;
             case BasicEnnemyEtats.STUNNED:
                 if (!is_stunned) StartCoroutine(stunTimer());
                 else
@@ -107,8 +135,7 @@ public class BasicEnnemy : Ennemy
                 }
                 break;
             case BasicEnnemyEtats.HIT:
-                if (vulnerable) state = BasicEnnemyEtats.CHASING;
-                else rigidbodyEnemy.velocity = Vector2.zero;
+                rigidbodyEnemy.velocity = Vector2.zero;
                 break;
         }
     }
@@ -116,13 +143,20 @@ public class BasicEnnemy : Ennemy
     override public void Attack()
     {
         rigidbodyEnemy.velocity = Vector2.zero;
-        attack_started = true;
-        colliderAttack.enabled = true;
-        var coroutine = windUpAttack();
-        StartCoroutine(coroutine);
-
+        StartCoroutine(waitForAttack());
     }
 
+    IEnumerator waitForAttack()
+    {
+        attack_started = true;
+        colliderAttack.enabled = true;
+        animator.Play("attack");
+        yield return new WaitForSeconds(attackAnimationTime);
+        attack_started = false;
+        colliderAttack.enabled = false;
+        state = BasicEnnemyEtats.IDLE;
+    }
+    
     override public void Damage()
     {
         if (vulnerable)
@@ -130,8 +164,10 @@ public class BasicEnnemy : Ennemy
             var directionAttack = player.transform.position - transform.position;
             directionAttack.y = 0;
             rigidbodyEnemy.AddForce(directionAttack * 100,ForceMode2D.Force);
-            StartCoroutine(IFrames());
             if (--HP == 0) Die();
+            else StartCoroutine(IFrames());
+            
+            
         }
     }
     
@@ -143,6 +179,16 @@ public class BasicEnnemy : Ennemy
 
     override public void Die()
     {
+        rigidbodyEnemy.velocity = Vector2.zero;
+        state = BasicEnnemyEtats.HIT;
+        StartCoroutine(waitDeathAnimation());
+    }
+
+    IEnumerator waitDeathAnimation()
+    {
+        vulnerable = false;
+        animator.Play("die");
+        yield return new WaitForSeconds(deathAnimationTime);
         HP = 2;
         gameObject.SetActive(false);
     }
@@ -184,7 +230,7 @@ public class BasicEnnemy : Ennemy
 
     private void TrackPlayer()
     {
-        var moveDirection = (player.transform.position - transform.position).normalized * moveSpeed;
+        var moveDirection = (player.transform.position - transform.position).normalized * chaseSpeed;
         if (player.transform.position.x - transform.position.x < 0) direction = -1;
         else if (player.transform.position.x - transform.position.x > 0) direction = 1;
         rigidbodyEnemy.velocity = new Vector2(moveDirection.x, rigidbodyEnemy.velocity.y);
@@ -209,7 +255,10 @@ public class BasicEnnemy : Ennemy
     IEnumerator IFrames()
     {
         vulnerable = false;
-        yield return new WaitForSeconds(.4f);
+        state = BasicEnnemyEtats.HIT;
+        animator.Play("hurt");
+        yield return new WaitForSeconds(hurtAnimationTime);
+        state = BasicEnnemyEtats.IDLE;
         vulnerable = true;
     }
     IEnumerator stunTimer()
