@@ -45,16 +45,21 @@ public class BasicEnnemy : Ennemy
     private bool is_stunned = false;
 
     private float attackAnimationTime = 0.750f;
-    private float hurtAnimationTime = 0.333f;
-    private float deathAnimationTime = 0.833f;
+    private float hurtAnimationTime = 0.4f;
+    private float deathAnimationTime = 0.833f / 0.5f;
 
     private float scaleX;
 
     public int startingDirection;
-    
+
+    private AudioSource hurtSFX;
+    private AudioSource dieSFX;
+
     // Start is called before the first frame update
     void Start()
     {
+        direction = startingDirection;
+        
         scaleX = transform.localScale.x;
         
         player = GameObject.FindWithTag("Player");
@@ -65,6 +70,12 @@ public class BasicEnnemy : Ennemy
         colliderEnemy = GetComponent<CircleCollider2D>();
         colliderAttack = gameObject.transform.GetChild(0).GetComponent<CircleCollider2D>();
         colliderAttack.enabled = false;
+    }
+    
+    void Awake()
+    {
+        hurtSFX = transform.Find("SFX/Hurt").GetComponent<AudioSource>();
+        dieSFX = transform.Find("SFX/Die").GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -164,8 +175,12 @@ public class BasicEnnemy : Ennemy
             var directionAttack = player.transform.position - transform.position;
             directionAttack.y = 0;
             rigidbodyEnemy.AddForce(directionAttack * 100,ForceMode2D.Force);
-            if (--HP == 0) Die();
-            else StartCoroutine(IFrames());
+            if (--HP <= 0) Die();
+            else
+            {
+                hurtSFX.Play();
+                StartCoroutine(IFrames());
+            }
             
             
         }
@@ -181,6 +196,7 @@ public class BasicEnnemy : Ennemy
     {
         rigidbodyEnemy.velocity = Vector2.zero;
         state = BasicEnnemyEtats.HIT;
+        dieSFX.Play();
         StartCoroutine(waitDeathAnimation());
     }
 
@@ -188,8 +204,11 @@ public class BasicEnnemy : Ennemy
     {
         vulnerable = false;
         animator.Play("die");
+        colliderAttack.gameObject.SetActive(false);
+        state = BasicEnnemyEtats.HIT;
         yield return new WaitForSeconds(deathAnimationTime);
         HP = 2;
+        colliderAttack.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 

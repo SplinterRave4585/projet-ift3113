@@ -1327,7 +1327,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 910994087}
+  - {fileID: 958904506}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1366,6 +1366,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 654219895055233162, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 654219895055233162, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2215784972520942432, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1450,18 +1458,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.619
       objectReference: {fileID: 0}
+    - target: {fileID: 3246469552742977462, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e78b2119cedaf45398b583276a7c25c2, type: 3}
     - target: {fileID: 3722586680871425529, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078216346827270096, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
+      propertyPath: m_SpriteKey
+      value: -0.19234093
       objectReference: {fileID: 0}
     - target: {fileID: 7295353440388782136, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8968401465002705758, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968401465002705758, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3722586680871425529, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a96e118d390bd444e9899eb3620f9153, type: 3}
---- !u!21 &910994087
+--- !u!21 &958904506
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
