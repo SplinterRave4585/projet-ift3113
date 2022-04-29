@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     public float jumpSpeed = 12.5f;
     public float walkSpeed = 7f;
-    private float glideSpeed;
+    public float glideSpeed = 6f;
     [HideInInspector] public int orientation = 1;
 
     private Vector2 currentMove;
@@ -99,8 +99,6 @@ public class Player : MonoBehaviour
         mouvement = actionMap.FindAction("Move");
         attaque = actionMap.FindAction("Attack");
         parrage = actionMap.FindAction("Parry");
-        
-        glideSpeed = walkSpeed / 2;
 
         zoneShardCount = GameObject.Find("CanvasText/Content/NbShards").GetComponent<TextMeshProUGUI>();
         zoneShardCount.text = nbShardLostTales.ToString();
