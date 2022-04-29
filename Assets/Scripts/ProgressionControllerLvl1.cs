@@ -89,8 +89,11 @@ public class ProgressionControllerLvl1 : MonoBehaviour
                 zoneTexte.GetComponent<TextMeshProUGUI>().SetText(shardHealDialog[countDialog++]);
                 GrimmSpeakShard();
             }
-            if (Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) || Input.GetButtonUp("Fire2"))
             {
+                shortGrimmDialog.Stop();
+                midGrimmDialog.Stop();
+                longGrimmDialog.Stop();
                 if (countDialog >= shardHealDialog.Length)
                 {
                     playerInput.enabled = true;

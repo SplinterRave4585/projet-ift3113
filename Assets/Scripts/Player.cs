@@ -36,8 +36,8 @@ public class Player : MonoBehaviour
     private InputAction attaque;
     private InputAction parrage;
 
-    [Header("Stats")] 
-    private int HP = 5;
+    [Header("Stats")] public int maxHP = 5;
+    private int HP;
     private bool invulnerable = false;
     private int nbShardLostTales = 0;
 
@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
     
     void Awake()
     {
+        HP = maxHP;
+        
         scaleX = transform.localScale.x;
 
         footstepsSFX = GameObject.Find("Joueur/SFX/Footsteps").GetComponent<AudioSource>();
@@ -255,6 +257,7 @@ public class Player : MonoBehaviour
     
     public void Heal(int h)
     {
+        if (HP + h > maxHP) h = maxHP - ((HP + h) % maxHP);
         HP += h;
         healthBar.GetComponent<RengeGames.HealthBars.UltimateCircularHealthBar>().AddRemoveSegments(-h);
     }

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2639381118072136626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.77975315}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09323, y: 0.096000366, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4596012726615423804}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0cf771cb821c599489973dce48fea5a2, type: 3}
-  m_Color: {r: 0.51432323, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4ff64cc493c6f7848b6da62bc41e494c, type: 3}
+  m_Color: {r: 0.99215686, g: 0.9098039, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
-  m_Color: {r: 0.5411765, g: 0.07058824, b: 0.97647065, a: 1}
+  m_Color: {r: 1, g: 1, b: 0.007843138, a: 1}
   m_Intensity: 5.75
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -265,8 +265,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0069618225, y: 0.0013448596}
-  m_Size: {x: 0.27895355, y: 0.98654974}
+  m_Offset: {x: -0.048903346, y: 0.023967743}
+  m_Size: {x: 0.5055628, y: 0.94130397}
   m_Direction: 0
 --- !u!114 &893489582325342769
 MonoBehaviour:
@@ -508,7 +508,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.4901961, g: 0.007843138, b: 0.9490197, a: 1}
+      maxColor: {r: 1, g: 1, b: 0.007843138, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5109,7 +5109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2816df66783a14c4c8b4316c5e876420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Prefab: {fileID: 3718915042649403221, guid: 60fcc33c7c70cf64f8c53e64fccd86f5, type: 3}
+  m_Prefab: {fileID: 3718915042649403221, guid: f6fa795499cc5f649a678f7839c5b4c4, type: 3}
 --- !u!1 &8195073113679265852
 GameObject:
   m_ObjectHideFlags: 0

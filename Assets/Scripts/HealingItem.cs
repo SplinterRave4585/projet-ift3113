@@ -12,6 +12,8 @@ public class HealingItem : MonoBehaviour
     public GameObject light;
     public AudioSource pickupSFX;
     
+    public int healingAmount;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class HealingItem : MonoBehaviour
     
     void Heal()
     {
-        player.GetComponent<Player>().Heal(1);
+        player.GetComponent<Player>().Heal(healingAmount);
     }
 
     IEnumerator waitParticles()
