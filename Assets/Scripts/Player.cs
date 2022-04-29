@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     [Header("Stats")] 
     private int HP = 5;
     private bool invulnerable = false;
+    private int nbShardLostTales = 0;
 
     private Rigidbody2D rigidbodyJoueur;
     private BoxCollider2D colliderJoueur;
@@ -73,6 +75,8 @@ public class Player : MonoBehaviour
     private float airAttackAnimationTime = 0.5f;
 
     private bool attacking = false;
+
+    private TextMeshProUGUI zoneShardCount;
     
     void Awake()
     {
@@ -96,24 +100,13 @@ public class Player : MonoBehaviour
         
         glideSpeed = walkSpeed / 2;
 
-        var clips = (animator.runtimeAnimatorController).animationClips;
-        foreach (var clip in clips)
-        {
-            if (clip.name == "Parry")
-            {
-                temps_parry = clip.length;
-                break;
-            }
-        }
-        
+        zoneShardCount = GameObject.Find("CanvasText/Content/NbShards").GetComponent<TextMeshProUGUI>();
+        zoneShardCount.text = nbShardLostTales.ToString();
+
     }
 
     void Update()
     {
-        
-        
-        Debug.Log("parry : " + parry.ToString());
-
         IsGrounded();
         
         if (orientation == 1)
@@ -193,9 +186,7 @@ public class Player : MonoBehaviour
             else if (rigidbodyJoueur.velocity.y >= 0 || isGrounded) rigidbodyJoueur.gravityScale = 2;
         }
 
-        //JUMP ATTACK GRAVITYSCALE BLABLA
-        
-        
+
         if (colliderJoueur.IsTouchingLayers(attacksLayerMask) && !parry && !invulnerable)
         {
             Vector3 directionAttaque = Vector2.zero;
@@ -209,9 +200,7 @@ public class Player : MonoBehaviour
         }
         else if (parry)
         {
-            Debug.Log("parry");
             Parry();
-            
         }
 
         if (attacking)
@@ -259,6 +248,17 @@ public class Player : MonoBehaviour
         StartCoroutine(iFrames(3.0f));
     }
 
+    public int getHP()
+    {
+        return HP;
+    }
+    
+    public void Heal(int h)
+    {
+        HP += h;
+        healthBar.GetComponent<RengeGames.HealthBars.UltimateCircularHealthBar>().AddRemoveSegments(-h);
+    }
+    
     IEnumerator Die()
     {
         animator.Play("Death");
@@ -270,10 +270,18 @@ public class Player : MonoBehaviour
         Debug.Log("le joueur est mort");
     }
 
-    public int getHP()
+    public void addShardsOfLostTales(int n)
     {
-        return HP;
+        nbShardLostTales += n;
+        zoneShardCount.text = nbShardLostTales.ToString();
     }
+
+    public void spendShardsOfLostTales(int n)
+    {
+        nbShardLostTales -= n;
+        zoneShardCount.text = nbShardLostTales.ToString();
+    }
+    
     
     public void doJump(InputAction.CallbackContext context)
     {
@@ -318,14 +326,12 @@ public class Player : MonoBehaviour
     {
         if (context.started && isGrounded && !parry)
         {
-            Debug.Log("doParry");
             parrySFX.Play();
             parry = true;
             animator.Play("Parry");
             //animator.SetTrigger("parry");
             invulnerable = true;
         }
-        
     }
 
     IEnumerator waitForAttack()

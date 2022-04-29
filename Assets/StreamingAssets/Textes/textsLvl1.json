@@ -5,5 +5,8 @@
   "tutoCombat" : "Grimm :\nIf you're in the air you can't parry, so be careful not to dig yourself in a hole by jumping around like a hyperactive bunny and get destroyed by 30 attacks.",
   "pause" : "PAUSED",
   "finPartie" : "END OF LEVEL",
-  "mortJoueur" : "YOU DIED"
+  "mortJoueur" : "YOU DIED",
+  "shardHeal1" : "Grimm :\nWhat you're meager little eyes are seeing right now is a Shard of Imagination.\n(Press E to skip to next dialog)",
+  "shardHeal2" : "Imagination is the fuel for stories contained in books like me. No book can be truly alive without some source of Imagination. Which means... we'll both die unceremoniously if we lose all Imagination.\n(Press E to skip to next dialog)",
+  "shardHeal3" : "So do us both a favor and pick up these shards when you see 'em, they contain some sweet 'ole Imagination to keep us alive.\n(Press E to close)"
 }
