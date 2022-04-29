@@ -44,9 +44,10 @@ public class BasicEnnemy : Ennemy
     private bool attack_cooldown = false;
     private bool is_stunned = false;
 
-    private float attackAnimationTime = 0.750f;
+    private float attackAnimationTime = 0.5f;
     private float hurtAnimationTime = 0.4f;
     private float deathAnimationTime = 0.833f / 0.5f;
+    private float attackLength = 0.1f;
 
     private float scaleX;
 
@@ -54,6 +55,9 @@ public class BasicEnnemy : Ennemy
 
     private AudioSource hurtSFX;
     private AudioSource dieSFX;
+    private AudioSource parriedSFX;
+    private AudioSource hitSFX;
+    private AudioSource splatSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +80,9 @@ public class BasicEnnemy : Ennemy
     {
         hurtSFX = transform.Find("SFX/Hurt").GetComponent<AudioSource>();
         dieSFX = transform.Find("SFX/Die").GetComponent<AudioSource>();
+        parriedSFX = transform.Find("SFX/Parried").GetComponent<AudioSource>();
+        hitSFX = transform.Find("SFX/Hit").GetComponent<AudioSource>();
+        splatSFX = transform.Find("SFX/Splat").GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -116,25 +123,6 @@ public class BasicEnnemy : Ennemy
                     state = BasicEnnemyEtats.ATTACKING;
                 break;
             case BasicEnnemyEtats.ATTACKING:
-                /*
-                if (!attack_started && !coroutine_attack_running)
-                {
-                    Attack();
-                }
-                else if (coroutine_attack_running)
-                {
-                    rigidbodyEnemy.velocity = Vector2.zero;
-                }
-                else if (!coroutine_attack_running && attack_started && animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "attack")
-                {
-                    vulnerable = true;
-                    colliderAttack.enabled = false;
-                    attack_started = false;
-                    animator.SetBool("isAttacking", false);
-                    StartCoroutine(cooldownAttack());
-                    state = BasicEnnemyEtats.CHASING;
-                } 
-                */
                 if (!attack_started) Attack();
                     break;
             case BasicEnnemyEtats.STUNNED:
@@ -154,16 +142,17 @@ public class BasicEnnemy : Ennemy
     override public void Attack()
     {
         rigidbodyEnemy.velocity = Vector2.zero;
-        StartCoroutine(waitForAttack());
+        StartCoroutine(startAttack());
     }
 
-    IEnumerator waitForAttack()
+    IEnumerator startAttack()
     {
         attack_started = true;
-        colliderAttack.enabled = true;
         animator.Play("attack");
         yield return new WaitForSeconds(attackAnimationTime);
         attack_started = false;
+        colliderAttack.enabled = true;
+        yield return new WaitForSeconds(attackLength);
         colliderAttack.enabled = false;
         state = BasicEnnemyEtats.IDLE;
     }
@@ -172,12 +161,14 @@ public class BasicEnnemy : Ennemy
     {
         if (vulnerable)
         {
+            hitSFX.Play();
             var directionAttack = player.transform.position - transform.position;
             directionAttack.y = 0;
             rigidbodyEnemy.AddForce(directionAttack * 100,ForceMode2D.Force);
             if (--HP <= 0) Die();
             else
             {
+                
                 hurtSFX.Play();
                 StartCoroutine(IFrames());
             }
@@ -188,12 +179,17 @@ public class BasicEnnemy : Ennemy
     
     override public void Parried()
     {
+        StopAllCoroutines();
+        parriedSFX.Play();
+        animator.Play("hurt");
+        animator.SetBool("stunned", true);
         state = BasicEnnemyEtats.STUNNED;
         colliderAttack.enabled = false;
     }
 
     override public void Die()
     {
+        StopAllCoroutines();
         rigidbodyEnemy.velocity = Vector2.zero;
         state = BasicEnnemyEtats.HIT;
         dieSFX.Play();
@@ -207,11 +203,19 @@ public class BasicEnnemy : Ennemy
         colliderAttack.gameObject.SetActive(false);
         state = BasicEnnemyEtats.HIT;
         yield return new WaitForSeconds(deathAnimationTime);
+        StartCoroutine(waitSplatSound());
         HP = 2;
+        
+    }
+
+    IEnumerator waitSplatSound()
+    {
+        splatSFX.Play();
+        yield return new WaitWhile(() => splatSFX.isPlaying);
         colliderAttack.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
-
+    
     private bool IsGrounded()
     {
         float extraHeightText = .1f;
@@ -286,6 +290,7 @@ public class BasicEnnemy : Ennemy
         vulnerable = true;
         yield return new WaitForSeconds(3.0f);
         state = BasicEnnemyEtats.IDLE;
+        animator.SetBool("stunned", false);
         is_stunned = false;
     }
 }
