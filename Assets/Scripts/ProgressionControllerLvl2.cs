@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 [Serializable]
@@ -29,7 +31,7 @@ public class ProgressionControllerLvl2 : MonoBehaviour
 {
      public PauseControl pause;
 
-    private string pathJson = Application.streamingAssetsPath + "/Textes/textsLvl1.json";
+    private string pathJson = Application.streamingAssetsPath + "/Textes/textsLvl2.json";
     public static TextesLvl2 textes;
 
     public GameObject zoneTexte;
@@ -40,9 +42,10 @@ public class ProgressionControllerLvl2 : MonoBehaviour
     public Collider2D triggerStartLvl;
     public Collider2D triggerShard;
     public Collider2D triggerBandit;
+    public Collider2D triggerEndGame;
 
     private string currentDialog;
-    private Dictionary<string, List<Tuple<string, AudioSource>>> dialogs;
+    private Dictionary<string, List<Tuple<string, AudioSource>>> dialogs = new Dictionary<string, List<Tuple<string, AudioSource>>>();
     private List<Tuple<string, AudioSource>> shardDialog;
     private List<Tuple<string, AudioSource>> startDialog;
     private List<Tuple<string, AudioSource>> banditDialog;
@@ -66,22 +69,24 @@ public class ProgressionControllerLvl2 : MonoBehaviour
         textes = TextesLvl2.CreateFromJSON(reader.ReadToEnd());
         reader.Close();
 
-        shardDialog = new List<Tuple<string, AudioSource>>()
+        shardDialog = new List<Tuple<string, AudioSource>>
         {
             Tuple.Create(textes.shard1, shortGrimmDialog),
             Tuple.Create(textes.shard2, longGrimmDialog), 
             Tuple.Create(textes.shard3,longGrimmDialog)
         };
-        startDialog = new List<Tuple<string, AudioSource>>(){Tuple.Create(textes.startLvl, shortGrimmDialog)};
-        banditDialog = new List<Tuple<string, AudioSource>>()
+        startDialog = new List<Tuple<string, AudioSource>>{Tuple.Create(textes.startLvl, shortGrimmDialog)};
+        
+        banditDialog = new List<Tuple<string, AudioSource>>
         {
             Tuple.Create(textes.bandit1, midGrimmDialog), 
             Tuple.Create(textes.bandit2, shortGrimmDialog)
         };
 
-        dialogs["start"] = startDialog;
-        dialogs["shard"] = shardDialog;
-        dialogs["bandit"] = banditDialog;
+        dialogs.Add("start", startDialog);
+        dialogs.Add("shard",shardDialog);
+        dialogs.Add("bandit", banditDialog);
+        
     }
 
     private void Awake()
@@ -98,11 +103,12 @@ public class ProgressionControllerLvl2 : MonoBehaviour
             if (countDialog == 0)
             {
                 zoneTexte.GetComponent<TextMeshProUGUI>().color = dialogGrimmColor;
+                Debug.Log(dialogs[currentDialog][countDialog].Item1);
+                zoneTexte.GetComponent<TextMeshProUGUI>().SetText(dialogs[currentDialog][countDialog].Item1);
                 dialogs[currentDialog][countDialog++].Item2.Play();
-                zoneTexte.GetComponent<TextMeshProUGUI>().SetText(dialogs[currentDialog][countDialog++].Item1);
             }
 
-            if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) || Input.GetButtonUp("Fire2"))
+            else if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) || Input.GetButtonUp("Fire2"))
             {
                 shortGrimmDialog.Stop();
                 midGrimmDialog.Stop();
@@ -118,8 +124,8 @@ public class ProgressionControllerLvl2 : MonoBehaviour
                 else
                 {
                     zoneTexte.GetComponent<TextMeshProUGUI>().color = dialogGrimmColor;
+                    zoneTexte.GetComponent<TextMeshProUGUI>().SetText(dialogs[currentDialog][countDialog].Item1);
                     dialogs[currentDialog][countDialog++].Item2.Play();
-                    zoneTexte.GetComponent<TextMeshProUGUI>().SetText(dialogs[currentDialog][countDialog++].Item1);
                 }
             }
 
@@ -152,10 +158,14 @@ public class ProgressionControllerLvl2 : MonoBehaviour
             currentDialog = "bandit";
             waitingForInput = true;
         }
+        else if (other == triggerEndGame)
+        {
+            EndGame();
+        }
 
         
     }
-
+/*
     private void OnTriggerExit2D(Collider2D other)
     {
         zoneTexte.GetComponent<TextMeshProUGUI>().SetText("");
@@ -165,9 +175,9 @@ public class ProgressionControllerLvl2 : MonoBehaviour
         midGrimmDialog.volume = highVolumeDialog;
         shortGrimmDialog.volume = highVolumeDialog;
     }
-
+*/
     private void EndGame()
     {
-        
+        SceneManager.LoadScene("EndScene");
     }
 }

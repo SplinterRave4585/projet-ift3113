@@ -77,6 +77,8 @@ public class Player : MonoBehaviour
     private bool attacking = false;
 
     private TextMeshProUGUI zoneShardCount;
+
+    public float maxFallSpeed = 15.0f; 
     
     void Awake()
     {
@@ -176,7 +178,9 @@ public class Player : MonoBehaviour
             }
             else if (!isGrounded)
             {
-                rigidbodyJoueur.velocity = new Vector2(currentMove.x * glideSpeed, rigidbodyJoueur.velocity.y);
+                if (rigidbodyJoueur.velocity.y < -maxFallSpeed && rigidbodyJoueur.velocity.y < 0.01f) rigidbodyJoueur.velocity = new Vector2(currentMove.x * glideSpeed, -maxFallSpeed);
+                else rigidbodyJoueur.velocity = new Vector2(currentMove.x * glideSpeed, rigidbodyJoueur.velocity.y);
+                
             }
         }
 

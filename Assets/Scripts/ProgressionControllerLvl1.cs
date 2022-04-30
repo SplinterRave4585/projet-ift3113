@@ -40,7 +40,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     public GameObject zoneTexte;
     public TextMeshProUGUI texteMenu;
     public PlayerInput playerInput;
-    
+
     public Collider2D triggerFinLvl;
     public Collider2D triggerTutoJump;
     public Collider2D triggerTutoAttack;
@@ -51,7 +51,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     private string[] shardHealDialog;
     private int countDialog = 0;
     private bool waitingForInput = false;
-    
+
     private Color dialogGrimmColor;
 
     private AudioSource shortGrimmDialog;
@@ -59,7 +59,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
     private AudioSource longGrimmDialog;
     public float highVolumeDialog = 0.5f;
     public float lowVolumeDialog = 0.25f;
-    
+
     void Start()
     {
         dialogGrimmColor = new Color(72f / 256f, 72f / 256f, 108f / 256f);
@@ -89,6 +89,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
                 zoneTexte.GetComponent<TextMeshProUGUI>().SetText(shardHealDialog[countDialog++]);
                 GrimmSpeakShard();
             }
+
             if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0) || Input.GetButtonUp("Fire2"))
             {
                 shortGrimmDialog.Stop();
@@ -136,7 +137,7 @@ public class ProgressionControllerLvl1 : MonoBehaviour
             zoneTexte.GetComponent<TextMeshProUGUI>().color = dialogGrimmColor;
             longGrimmDialog.volume = lowVolumeDialog;
             longGrimmDialog.Play();
-            
+
         }
         else if (other == triggerTutoCombat)
         {
@@ -151,42 +152,45 @@ public class ProgressionControllerLvl1 : MonoBehaviour
             waitingForInput = true;
         }
 
-        
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        zoneTexte.GetComponent<TextMeshProUGUI>().SetText("");
-        zoneTexte.GetComponent<TextMeshProUGUI>().color = Color.white;
-        
-        longGrimmDialog.volume = highVolumeDialog;
-        midGrimmDialog.volume = highVolumeDialog;
-        shortGrimmDialog.volume = highVolumeDialog;
+        if (other.tag == "Level 1")
+        {
+            zoneTexte.GetComponent<TextMeshProUGUI>().SetText("");
+            zoneTexte.GetComponent<TextMeshProUGUI>().color = Color.white;
+
+            longGrimmDialog.volume = highVolumeDialog;
+            midGrimmDialog.volume = highVolumeDialog;
+            shortGrimmDialog.volume = highVolumeDialog;
+        }
     }
 
     void GrimmSpeakShard()
-    {
-        switch (countDialog)
         {
-            case 0:
-                shortGrimmDialog.Play();
-                break;
-            case 1:
-                longGrimmDialog.Play();
-                break;
-            case 2:
-                midGrimmDialog.Play();
-                break;
-            
-        }
-    }
-    
-    private void EndGame()
-    {
-        pause.PauseGame();
-        texteMenu.SetText(textes.finPartie);
+            switch (countDialog)
+            {
+                case 0:
+                    shortGrimmDialog.Play();
+                    break;
+                case 1:
+                    longGrimmDialog.Play();
+                    break;
+                case 2:
+                    midGrimmDialog.Play();
+                    break;
 
-        Time.timeScale = 0f;
+            }
+        }
+
+        private void EndGame()
+        {
+            pause.PauseGame();
+            texteMenu.SetText(textes.finPartie);
+
+            Time.timeScale = 0f;
+        }
+
     }
-    
-}
